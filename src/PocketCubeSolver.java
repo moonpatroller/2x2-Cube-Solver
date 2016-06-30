@@ -18,7 +18,8 @@ public class PocketCubeSolver {
 	public static boolean solved = false;
 	static void print_sides(int cube [][], int first_side, int side_count) {
 		char ColorNames [] = {'W','O','G','R','B','Y'};
-		for(int line  = 0; line < 2; line++) { 
+		
+		for(int line = 0; line < 2; line++) { 
 			for(int side = first_side; side < side_count + first_side; side++) {
 				System.out.print(" ");
 				if(side_count == 1 || side_count == 6) {
@@ -56,8 +57,10 @@ public class PocketCubeSolver {
 			  int cube0_3 = cube[side_num][3];  
 		cube[side_num][1] = cube[side_num][2];
 		cube[side_num][3] = cube[side_num][0];
-		cube[side_num][2] = cube0_3;
-		cube[side_num][0] = cube0_1;
+		cube[side_num][2] = cube0_1;
+		cube[side_num][0] = cube0_3;
+		
+	
 
 	}
 	public static int[][] turn_U(int cube [][]){
@@ -76,12 +79,14 @@ public class PocketCubeSolver {
 		cube[1][0] = cube2_0;
 		cube[1][1] = cube2_1;
 		System.out.print("U ");
+		
+		
 		return cube;
 		}
 	public  static int[][] turn_Ui(int cube[][]){
 		 turn_CC(cube,0);
 		 int cube2_0 = cube[2][0];
-		 int cube2_2 = cube[2][2];
+		 int cube2_1 = cube[2][1];
 		 
 		 cube[2][0] = cube[1][0];
 		 cube[2][1] = cube[1][1];
@@ -93,8 +98,9 @@ public class PocketCubeSolver {
 		 cube[4][1] = cube[3][1];
 		 
 		 cube[3][0] = cube2_0;
-		 cube[3][1] = cube2_2;
+		 cube[3][1] = cube2_1;
 		 System.out.print("Ui ");
+		 
 		 return cube;
 		 }
 	public static int[][] turn_U2(int cube[][]){
@@ -417,18 +423,22 @@ public class PocketCubeSolver {
 		return cube;
 		
 	}
+		
+	// check if  all oreintation
+	
 	
 	public static int[][] scan_cube()//input is the colors that we get and will be returned as is
 	{
 		int input[][] = new int[6][4];
-		//initate the counter 
+		//Initiate the counter 
 		int counter0 = 0;
 		@SuppressWarnings("unused")
 		int counter1 = 0;
 		
 		Scanner in = new Scanner(System.in);
 		//Collect the data
-			System.out.println("Hold the cube in a position that you will remember "
+			System.out.println("Welcome to the 2x2x2 cube solver :)\n \n"
+					+ "Hold the cube in a position that you will remember "
 					+ "and won't change because the 2x2 has no centers.\nRemembering "
 					+ "block colors would be helpful\nE.I: RED 1x1x2 block on top of blue piece\n \n");
 			
@@ -494,7 +504,18 @@ public class PocketCubeSolver {
 			while(counter0 < 4){
 				counter1 = 0;
 				input[5][counter0] = Integer.parseInt(in.nextLine());
+				
 				counter0++;
+				
+				/*
+				 ans = (valid_cube == 'y');
+		if (valid_cube == 'n'){
+			System.out.println("Please retry entering your cube");
+			System.exit(0);
+		}
+		
+
+				 */
 			}
 		return input;
 	}
@@ -1052,36 +1073,25 @@ public class PocketCubeSolver {
 		}
 		
 		//check to see if cube is solved
-		for(int x = 0; x < 4; x++){
-			if(cube[0][x] != 0){
+	
+			if(cube[0][0] != cube[0][1] || cube[0][0] != cube[0][2] || cube[0][0] != cube[0][3]){
 				result1 = false;
 			}
-		}
-		for(int x = 0; x < 4; x++){
-			if(cube[1][x] != 1){
+			else if(cube[1][0] != cube[1][1] || cube[1][0] != cube[1][2] || cube[1][0] != cube[1][3]){
 				result1 = false;
 			}
-		}
-		for(int x = 0; x < 4; x++){
-			if(cube[2][x] != 2){
+			else if(cube[2][0] != cube[2][1] || cube[2][0] != cube[2][2] || cube[2][0] != cube[2][3]){
 				result1 = false;
 			}
-		}
-		for(int x = 0; x < 4; x++){
-			if(cube[3][x] != 3){
+			else if(cube[3][0] != cube[3][1] || cube[3][0] != cube[3][2] || cube[3][0] != cube[3][3]){
 				result1 = false;
 			}
-		}
-		for(int x = 0; x < 4; x++){
-			if(cube[4][x] != 4){
+			else if(cube[4][0] != cube[4][1] || cube[4][0] != cube[4][2] || cube[4][0] != cube[4][3]){
 				result1 = false;
 			}
-		}
-		for(int x = 0; x < 4; x++){
-			if(cube[5][x] != 5){
+			else if(cube[5][0] != cube[5][1] || cube[5][0] != cube[5][2] || cube[5][0] != cube[5][3]){
 				result1 = false;
 			}
-		}
 		return result1;
 	}
 	public static void resetColors(){
@@ -1107,17 +1117,18 @@ public class PocketCubeSolver {
 	
 	}
 		
-	
-	
 	static void print_cube(int[][] cube) {
 		print_sides(cube, 0, 1);
 		print_sides(cube, 1, 4);
 		print_sides(cube, 5, 1);
 	} 
+	@SuppressWarnings("unused")
 	public static void main(String[] args){
 	
 		Scanner input = new Scanner(System.in);
-		System.out.println();
+	
+		 System.out.println();
+		 
 		
 		boolean ans = true;
 		int counter = 0;
@@ -1133,22 +1144,9 @@ public class PocketCubeSolver {
 			System.out.println("Please retry entering your cube");
 			System.exit(0);
 		}
-		/*
-		 boolean running = true;
-		int num1 = 0, num2 = 0;
-		char operator = 0;
-		Scanner scanner = new Scanner(System.in);
-		 
-		 
-		char result;
-		System.out.print("would you like to make another calculation? Enter y/n");
-		result = scanner.next().charAt(0);
 		
-		running = (result == 'y');
-		
-	}while(running);
-	*/
 		//setting cube1 to main cubes' colors for testing solution
+		
 		for(int x = 0; x < 4; x++){
 			cube1[0][x] = cube[0][x];
 		}
@@ -1184,7 +1182,7 @@ public class PocketCubeSolver {
 										
 										if(solved){
 											
-											System.out.println("HOW TO DECODE YOUR SCRAMBLE: \n"
+											System.out.println("\n HOW TO DECODE YOUR SCRAMBLE: \n"
 													+ "0 == no turn\n"
 													+ "U = 0\n"
 													+ "Ui = 1\n"
@@ -1232,6 +1230,7 @@ public class PocketCubeSolver {
 										for(int x = 0; x < 4; x++){
 											System.out.println(cube[5][x]);
 										}*/
+		
 										resetColors();
 										
 										counter++;
@@ -1276,7 +1275,6 @@ public class PocketCubeSolver {
 		}	
 	}
 }	
-	
-}
 
+}
 
