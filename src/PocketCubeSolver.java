@@ -15,6 +15,7 @@ import java.util.Scanner;
 public class PocketCubeSolver {
 	public static int cube[][] = new int [6][4];
 	public static int cube1[][] = new int [6][4];
+	public static int saved_cube[][] = new int [6][4];
 	public static boolean solved = false;
 	static void print_sides(int cube [][], int first_side, int side_count) {
 		char ColorNames [] = {'W','O','G','R','B','Y'};	
@@ -1150,6 +1151,37 @@ public class PocketCubeSolver {
 	
 	}
 	
+	public static void copy_scramble(int cube[][]){
+		
+		for(int x = 0; x < 4; x++){
+		saved_cube[0][x] = cube[0][x];
+		}
+		for(int x = 0; x < 4; x++){
+			saved_cube[1][x] = cube[0][x];
+			}
+
+		for(int x = 0; x < 4; x++){
+			saved_cube[2][x] = cube[0][x];
+			}
+
+		for(int x = 0; x < 4; x++){
+			saved_cube[3][x] = cube[0][x];
+			}
+
+		for(int x = 0; x < 4; x++){
+			saved_cube[4][x] = cube[0][x];
+			}
+		for(int x = 0; x < 4; x++){
+			saved_cube[0][x] = cube[0][x];
+			}
+		for(int x = 0; x < 4; x++){
+			saved_cube[0][x] = cube[0][x];
+			}
+
+		
+		
+	}
+	
 		
 	static void print_cube(int[][] cube) {
 		print_sides(cube, 0, 1);
@@ -1169,7 +1201,6 @@ public class PocketCubeSolver {
 		cube = scan_cube();
 		System.out.println("confirm that this is your scramble y/n ");
 		print_cube(cube);
-		
 		
 		valid_cube = input.next().charAt(0);
 		
@@ -1198,23 +1229,21 @@ public class PocketCubeSolver {
 			cube1[5][x] = cube[5][x];
 		}
 		//18 ways the cube can be turned 
-		for(int a = -1; a < 17; a++){
-			for(int b = -1; b < 17; b++){
-				for(int c = -1; c < 17;c++ ){
-					for(int d = -1; d < 17; d++){
-						for(int e = -1; e < 17; e++){
-							for(int f = -1; f < 17; f++){
-								for(int g = -1; g < 17; g++){
-									for(int h = -1; h < 17; h++){
-										for(int i = -1; i < 17; i++){
-											for(int j = -1; j < 17; j++){
-												for(int k = -1;k < 17; k++){
+		for(int a = -1; a < 18; a++){
+			for(int b = -1; b < 18; b++){
+				for(int c = -1; c < 18;c++ ){
+					for(int d = -1; d < 18; d++){
+						for(int e = -1; e < 18; e++){
+							for(int f = -1; f < 18; f++){
+								for(int g = -1; g < 18; g++){
+									for(int h = -1; h < 18; h++){
+										for(int i = -1; i < 18; i++){
+											for(int j = -1; j < 18; j++){
+												for(int k = -1;k < 18; k++){
 										
 										System.out.println("Testing combination:"+ counter);
 										solved = test(a,b,c,d,e,f,g,h,i,j,k);
-										while(counter > 100 ){
-											System.exit(0);
-										}
+										
 										if(solved){
 											
 											System.out.println("\n HOW TO DECODE YOUR SCRAMBLE: \n"
