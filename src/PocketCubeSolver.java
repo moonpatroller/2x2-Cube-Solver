@@ -1056,10 +1056,7 @@ public class PocketCubeSolver {
 			cube = turn_B2(cube);
 		}
 		
-		if(k == -1){
-			System.out.print("-1 ");
-		}
-		else if(k == 0){
+		if(k == 0){
 			cube = turn_U(cube);
 		}
 		else if(k == 1){
