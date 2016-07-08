@@ -17,6 +17,8 @@ public class PocketCubeSolver {
 	public static int cube1[][] = new int [6][4];
 	public static int saved_cube[][] = new int [6][4];
 	public static boolean solved = false;
+	private static boolean ans;
+	private static int counter1;
 	static void print_sides(int cube [][], int first_side, int side_count) {
 		char ColorNames [] = {'W','O','G','R','B','Y'};	
 		for(int line = 0; line < 2; line++) { 
@@ -424,7 +426,7 @@ public class PocketCubeSolver {
 		int input[][] = new int[6][4];
 		//Initiate the counter 
 		int counter0 = 0;
-		int counter1 = 0;
+		counter1 = 0;
 		
 		Scanner in = new Scanner(System.in);
 		//Collect the data
@@ -502,7 +504,7 @@ public class PocketCubeSolver {
 	
 	public static boolean test(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k){
 		boolean result1 = true;
-		 
+		
 		if(a == 0){
 			cube = turn_U(cube);
 		}
@@ -557,7 +559,7 @@ public class PocketCubeSolver {
 		else if(a == 17){
 			cube = turn_B2(cube);
 		}
-		// b
+		
 		if(b == 0){
 			cube = turn_U(cube);
 		}
@@ -612,6 +614,7 @@ public class PocketCubeSolver {
 		else if(b == 17){
 			cube = turn_B2(cube);
 		}
+		
 		if(c == 0){
 			cube = turn_U(cube);
 		}
@@ -997,6 +1000,7 @@ public class PocketCubeSolver {
 			cube = turn_B2(cube);
 		}
 
+		
 		if(j == 0){
 			cube = turn_U(cube);
 		}
@@ -1052,7 +1056,10 @@ public class PocketCubeSolver {
 			cube = turn_B2(cube);
 		}
 		
-		if(k == 0){
+		if(k == -1){
+			System.out.print("-1 ");
+		}
+		else if(k == 0){
 			cube = turn_U(cube);
 		}
 		else if(k == 1){
@@ -1150,38 +1157,6 @@ public class PocketCubeSolver {
 		}
 	
 	}
-	
-	public static void copy_scramble(int cube[][]){
-		
-		for(int x = 0; x < 4; x++){
-		saved_cube[0][x] = cube[0][x];
-		}
-		for(int x = 0; x < 4; x++){
-			saved_cube[1][x] = cube[0][x];
-			}
-
-		for(int x = 0; x < 4; x++){
-			saved_cube[2][x] = cube[0][x];
-			}
-
-		for(int x = 0; x < 4; x++){
-			saved_cube[3][x] = cube[0][x];
-			}
-
-		for(int x = 0; x < 4; x++){
-			saved_cube[4][x] = cube[0][x];
-			}
-		for(int x = 0; x < 4; x++){
-			saved_cube[0][x] = cube[0][x];
-			}
-		for(int x = 0; x < 4; x++){
-			saved_cube[0][x] = cube[0][x];
-			}
-
-		
-		
-	}
-	
 		
 	static void print_cube(int[][] cube) {
 		print_sides(cube, 0, 1);
@@ -1189,12 +1164,22 @@ public class PocketCubeSolver {
 		print_sides(cube, 5, 1);
 	} 
 	
+	public static boolean continue_sequence(int x, int y){
+		
+		if(x >= 0 && y == -1 ){
+			return false;
+		}
+		else{
+			return true;	
+			}
+	}
+	
 	public static void main(String[] args){
 	
 		Scanner input = new Scanner(System.in);
 		 
-		boolean ans = true;
-		int counter = 0;
+		ans = true;
+		long counter = 0;
 		char valid_cube;
 		
 		System.out.println();
@@ -1231,19 +1216,27 @@ public class PocketCubeSolver {
 		//18 ways the cube can be turned 
 		for(int a = -1; a < 18; a++){
 			for(int b = -1; b < 18; b++){
+				if(continue_sequence(a,b))
 				for(int c = -1; c < 18;c++ ){
 					for(int d = -1; d < 18; d++){
+						if(continue_sequence(c,d))
 						for(int e = -1; e < 18; e++){
 							for(int f = -1; f < 18; f++){
+								if(continue_sequence(e,f))
 								for(int g = -1; g < 18; g++){
 									for(int h = -1; h < 18; h++){
+										if(continue_sequence(g,h))
 										for(int i = -1; i < 18; i++){
 											for(int j = -1; j < 18; j++){
+												if(continue_sequence(i,j))
 												for(int k = -1;k < 18; k++){
+													if(continue_sequence(j,k)){
 										
 										System.out.println("Testing combination:"+ counter);
 										solved = test(a,b,c,d,e,f,g,h,i,j,k);
-										
+									while(counter > 400){
+										System.exit(0);
+									}
 										if(solved){
 											
 											System.out.println("\n HOW TO DECODE YOUR SCRAMBLE: \n"
@@ -1267,16 +1260,21 @@ public class PocketCubeSolver {
 													+ "Bi = 16\n"
 													+ "B = 17\n");
 											System.out.println("This was your scramble");
+											print_cube(cube);
 											System.out.println("\n"+a+"\n"+
 													b+"\n"+c+"\n"+
 													d+"\n"+e+"\n"+
 													f+"\n"+g+"\n"+
 													h+"\n"+i+"\n"+j+"\n"+k+"\n");
 											System.out.println("SOLVED!! :) ");
-										}
-		
+														}
+													}
 											resetColors();
 											counter++;
+												if(solved){
+													break;
+												}
+											}
 											if(solved){
 												break;
 												}
@@ -1287,7 +1285,7 @@ public class PocketCubeSolver {
 										}
 									if(solved){
 										break;
-										}
+										}	
 									}
 								if(solved){
 									break;
@@ -1305,18 +1303,14 @@ public class PocketCubeSolver {
 						break;
 						}	
 					}
-				if(solved){
-					break;
-					}	
+			if(solved){
+				break;
+				}	
 				}
 		if(solved){
 			break;
 			}	
-			}
-	if(solved){
-		break;
-		}	
-	}
+		}
 	if(solved){
 		break;
 	}
