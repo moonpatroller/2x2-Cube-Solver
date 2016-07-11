@@ -17,7 +17,9 @@ public class PocketCubeSolver {
 	public static int cube1[][] = new int [6][4];
 	public static int saved_cube[][] = new int [6][4];
 	public static boolean solved = false;
+	@SuppressWarnings("unused")
 	private static boolean ans;
+	@SuppressWarnings("unused")
 	private static int counter1;
 	static void print_sides(int cube [][], int first_side, int side_count) {
 		char ColorNames [] = {'W','O','G','R','B','Y'};	
@@ -431,7 +433,7 @@ public class PocketCubeSolver {
 		Scanner in = new Scanner(System.in);
 		//Collect the data
 			System.out.println("Welcome to the 2x2x2 cube solver :)\n \n"
-					+ "Hold the cube in a position that you will remember "
+					+ "Hold the cube in a position that you will remember \n"
 					+ "and won't change because the 2x2 has no centers.\nRemembering "
 					+ "block colors would be helpful\nE.I: RED 1x1x2 block on top of blue piece\n \n");
 			
@@ -1162,14 +1164,68 @@ public class PocketCubeSolver {
 	} 
 	
 	public static boolean continue_sequence(int x, int y){
+
+        if(x >= 0 && y == -1){
+            return false;
+        }
+        else if(x >= 0 && side_number(x) == side_number(y)){
+        	return false;
+        }
+        if(x >= 0 && skip_opposite_turns(x,y)) {
+        	  return false;
+        	}
+        else{
+        	return true;
+    	}
+	}
+	public static boolean skip_opposite_turns(int x, int y){
 		
-		if(x >= 0 && y == -1 ){
+		if(side_number(x) == 0 && side_number(y) == 5){
 			return false;
 		}
-		else{
-			return true;	
-			}
+		else if(side_number(x) == 5 && side_number(y) == 0){
+			return true;
+		}
+		else if(side_number(x) == 1 && side_number(y) == 3){
+			return false;
+		}
+		else if(side_number(x) == 3 && side_number(y) == 1){
+			return true;
+		}
+		else if(side_number(x) == 2 && side_number(y) == 4){
+			return false;	
+		}
+		else if(side_number(x) == 4 && side_number(y) == 2){
+			return true;
+		}
+		
+		return true;
+		
 	}
+	public static int side_number(int x){
+		
+		if(x == 0 || x == 1 || x == 2){
+			return 0;
+		}
+		else if(x == 3 || x == 4 || x == 5){
+			return 1;
+		}
+		else if(x == 6 || x == 7 || x == 8){
+			return 2;
+		}
+		else if(x == 9 || x == 10 || x == 11){
+			return 3;
+		}
+		else if(x == 12 || x == 13 || x == 14){
+			return 4;	
+		}
+		else if(x == 15 || x == 16 || x == 17){
+			return 5;
+		}
+			
+		return x;
+	}
+	
 	
 	public static void main(String[] args){
 	
@@ -1228,14 +1284,13 @@ public class PocketCubeSolver {
 												if(continue_sequence(i,j))
 												for(int k = -1;k < 18; k++){
 													if(continue_sequence(j,k)){
-										
 										System.out.println("Testing combination:"+ counter);
 										solved = test(a,b,c,d,e,f,g,h,i,j,k);
-									while(counter > 400){
-										System.exit(0);
-									}
+											while(counter > 400){
+												System.exit(0);
+											}
 										if(solved){
-											
+				
 											System.out.println("\n HOW TO DECODE YOUR SCRAMBLE: \n"
 													+ "0 == no turn\n"
 													+ "U = 0\n"
@@ -1265,9 +1320,10 @@ public class PocketCubeSolver {
 													h+"\n"+i+"\n"+j+"\n"+k+"\n");
 											System.out.println("SOLVED!! :) ");
 														}
-													}
+													
 											resetColors();
 											counter++;
+													}
 												if(solved){
 													break;
 												}
@@ -1303,7 +1359,7 @@ public class PocketCubeSolver {
 			if(solved){
 				break;
 				}	
-				}
+			}
 		if(solved){
 			break;
 			}	
