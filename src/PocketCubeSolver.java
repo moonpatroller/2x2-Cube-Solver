@@ -1272,15 +1272,19 @@ public class PocketCubeSolver {
 			for(int b = -1; b < 18; b++){
 				if(continue_sequence(a,b))
 				for(int c = -1; c < 18;c++ ){
+					if(continue_sequence(b,c))
 					for(int d = -1; d < 18; d++){
 						if(continue_sequence(c,d))
 						for(int e = -1; e < 18; e++){
+							if(continue_sequence(d,e))
 							for(int f = -1; f < 18; f++){
 								if(continue_sequence(e,f))
 								for(int g = -1; g < 18; g++){
+									if(continue_sequence(f,g))
 									for(int h = -1; h < 18; h++){
 										if(continue_sequence(g,h))
 										for(int i = -1; i < 18; i++){
+											if(continue_sequence(h,i))
 											for(int j = -1; j < 18; j++){
 												if(continue_sequence(i,j))
 												for(int k = -1;k < 18; k++){
