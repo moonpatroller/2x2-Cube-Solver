@@ -443,6 +443,7 @@ public class PocketCubeSolver {
 		
 			while(counter0 < 4){
 				counter1 = 0;
+				
 				input[0][counter0] = Integer.parseInt(in.nextLine());
 				counter0++;
 			}
@@ -1180,26 +1181,26 @@ public class PocketCubeSolver {
 	}
 	public static boolean skip_opposite_turns(int x, int y){
 		
-		if(side_number(x) == 0 && side_number(y) == 5){
+		if(side_number(0) == x && side_number(5) == y){
 			return false;
 		}
-		else if(side_number(x) == 5 && side_number(y) == 0){
+		else if(side_number(5) == x && side_number(0) == y){
 			return true;
 		}
-		else if(side_number(x) == 1 && side_number(y) == 3){
+		else if(side_number(1) == x && side_number(3) == y){
 			return false;
 		}
-		else if(side_number(x) == 3 && side_number(y) == 1){
+		else if(side_number(3) == x && side_number(1) == y){
 			return true;
 		}
-		else if(side_number(x) == 2 && side_number(y) == 4){
+		else if(side_number(2) == x && side_number(4) == y){
 			return false;	
 		}
-		else if(side_number(x) == 4 && side_number(y) == 2){
+		else if(side_number(4) == x && side_number(2) == y){
 			return true;
 		}
 		
-		return true;
+		return false;
 		
 	}
 	public static int side_number(int x){
@@ -1286,7 +1287,7 @@ public class PocketCubeSolver {
 													if(continue_sequence(j,k)){
 										System.out.println("Testing combination:"+ counter);
 										solved = test(a,b,c,d,e,f,g,h,i,j,k);
-											while(counter > 400){
+											while(counter > 500){
 												System.exit(0);
 											}
 										if(solved){
