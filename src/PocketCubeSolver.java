@@ -508,6 +508,7 @@ public class PocketCubeSolver {
 	public static boolean test(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k){
 		boolean result1 = true;
 		
+		
 		if(a == 0){
 			cube = turn_U(cube);
 		}
@@ -518,49 +519,49 @@ public class PocketCubeSolver {
 			cube = turn_U2(cube);
 		}
 		else if(a == 3){
-			cube = turn_F(cube);
-		}
-		else if(a == 4){
-			cube = turn_Fi(cube);
-		}
-		else if(a == 5){
-			cube = turn_F2(cube);
-		}
-		else if(a == 6){
-			cube = turn_R(cube);
-		}
-		else if(a == 7){
-			cube = turn_Ri(cube);
-		}
-		else if(a == 8){
-			cube = turn_R2(cube);
-		}
-		else if(a == 9){
 			cube = turn_L(cube);
 		}
-		else if(a == 10){
+		else if(a == 4){
 			cube = turn_Li(cube);
 		}
-		else if(a == 11){
+		else if(a == 5){
 			cube = turn_L2(cube);
 		}
+		else if(a == 6){
+			cube = turn_F(cube);
+		}
+		else if(a == 7){
+			cube = turn_Fi(cube);
+		}
+		else if(a == 8){
+			cube = turn_F2(cube);
+		}
+		else if(a == 9){
+			cube = turn_R(cube);
+		}
+		else if(a == 10){
+			cube = turn_Ri(cube);
+		}
+		else if(a == 11){
+			cube = turn_R2(cube);
+		}
 		else if(a == 12){
-			cube = turn_D(cube);
-		}
-		else if(a == 13){
-			cube = turn_Di(cube);
-		}
-		else if(a == 14){
-			cube = turn_D2(cube);
-		}
-		else if(a == 15){
 			cube = turn_B(cube);
 		}
-		else if(a == 16){
+		else if(a == 13){
 			cube = turn_Bi(cube);
 		}
-		else if(a == 17){
+		else if(a == 14){
 			cube = turn_B2(cube);
+		}
+		else if(a == 15){
+			cube = turn_D(cube);
+		}
+		else if(a == 16){
+			cube = turn_Di(cube);
+		}
+		else if(a == 17){
+			cube = turn_D2(cube);
 		}
 		
 		if(b == 0){
@@ -573,49 +574,49 @@ public class PocketCubeSolver {
 			cube = turn_U2(cube);
 		}
 		else if(b == 3){
-			cube = turn_F(cube);
-		}
-		else if(b == 4){
-			cube = turn_Fi(cube);
-		}
-		else if(b == 5){
-			cube = turn_F2(cube);
-		}
-		else if(b == 6){
-			cube = turn_R(cube);
-		}
-		else if(b == 7){
-			cube = turn_Ri(cube);
-		}
-		else if(b == 8){
-			cube = turn_R2(cube);
-		}
-		else if(b == 9){
 			cube = turn_L(cube);
 		}
-		else if(b == 10){
+		else if(b == 4){
 			cube = turn_Li(cube);
 		}
+		else if(b == 5){
+			cube = turn_L2(cube);
+		}
+		else if(b == 6){
+			cube = turn_F(cube);
+		}
+		else if(b == 7){
+			cube = turn_Fi(cube);
+		}
+		else if(b == 8){
+			cube = turn_F2(cube);
+		}
+		else if(b == 9){
+			cube = turn_R(cube);
+		}
+		else if(b == 10){
+			cube = turn_Ri(cube);
+		}
 		else if(b == 11){
-			 cube = turn_L2(cube);
+			cube = turn_R2(cube);
 		}
 		else if(b == 12){
-			cube = turn_D(cube);
-		}
-		else if(b == 13){
-			cube = turn_Di(cube);
-		}
-		else if(b == 14){
-			cube = turn_D2(cube);
-		}
-		else if(b == 15){
 			cube = turn_B(cube);
 		}
-		else if(b == 16){
+		else if(b == 13){
 			cube = turn_Bi(cube);
 		}
-		else if(b == 17){
+		else if(b == 14){
 			cube = turn_B2(cube);
+		}
+		else if(b == 15){
+			cube = turn_D(cube);
+		}
+		else if(b == 16){
+			cube = turn_Di(cube);
+		}
+		else if(b == 17){
+			cube = turn_D2(cube);
 		}
 		
 		if(c == 0){
@@ -628,50 +629,50 @@ public class PocketCubeSolver {
 			cube = turn_U2(cube);
 		}
 		else if(c == 3){
-			cube = turn_F(cube);
-		}
-		else if(c == 4){
-			cube = turn_Fi(cube);
-		}
-		else if(c == 5){
-			cube = turn_F2(cube);
-		}
-		else if(c == 6){
-			cube = turn_R(cube);
-		}
-		else if(c == 7){
-			cube = turn_Ri(cube);
-		}
-		else if(c == 8){
-			cube = turn_R2(cube);
-		}
-		else if(c == 9){
 			cube = turn_L(cube);
 		}
-		else if(c == 10){
+		else if(c == 4){
 			cube = turn_Li(cube);
 		}
-		else if(c == 11){
+		else if(c == 5){
 			cube = turn_L2(cube);
 		}
+		else if(c == 6){
+			cube = turn_F(cube);
+		}
+		else if(c == 7){
+			cube = turn_Fi(cube);
+		}
+		else if(c == 8){
+			cube = turn_F2(cube);
+		}
+		else if(c == 9){
+			cube = turn_R(cube);
+		}
+		else if(c == 10){
+			cube = turn_Ri(cube);
+		}
+		else if(c == 11){
+			cube = turn_R2(cube);
+		}
 		else if(c == 12){
-			cube = turn_D(cube);
-		}
-		else if(c == 13){
-			cube = turn_Di(cube);
-		}
-		else if(c == 14){
-			cube = turn_D2(cube);
-		}
-		else if(c == 15){
 			cube = turn_B(cube);
 		}
-		else if(c == 16){
+		else if(c == 13){
 			cube = turn_Bi(cube);
 		}
-		else if(c == 17){
+		else if(c == 14){
 			cube = turn_B2(cube);
-		}	
+		}
+		else if(c == 15){
+			cube = turn_D(cube);
+		}
+		else if(c == 16){
+			cube = turn_Di(cube);
+		}
+		else if(c == 17){
+			cube = turn_D2(cube);
+		}
 		
 		if(d == 0){
 			cube = turn_U(cube);
@@ -683,49 +684,49 @@ public class PocketCubeSolver {
 			cube = turn_U2(cube);
 		}
 		else if(d == 3){
-			cube = turn_F(cube);
-		}
-		else if(d == 4){
-			cube = turn_Fi(cube);
-		}
-		else if(d == 5){
-			cube = turn_F2(cube);
-		}
-		else if(d == 6){
-			cube = turn_R(cube);
-		}
-		else if(d == 7){
-			cube = turn_Ri(cube);
-		}
-		else if(d == 8){
-			cube = turn_R2(cube);
-		}
-		else if(d == 9){
 			cube = turn_L(cube);
 		}
-		else if(d == 10){
+		else if(d == 4){
 			cube = turn_Li(cube);
 		}
-		else if(d == 11){
+		else if(d == 5){
 			cube = turn_L2(cube);
 		}
+		else if(d == 6){
+			cube = turn_F(cube);
+		}
+		else if(d == 7){
+			cube = turn_Fi(cube);
+		}
+		else if(d == 8){
+			cube = turn_F2(cube);
+		}
+		else if(d == 9){
+			cube = turn_R(cube);
+		}
+		else if(d == 10){
+			cube = turn_Ri(cube);
+		}
+		else if(d == 11){
+			cube = turn_R2(cube);
+		}
 		else if(d == 12){
-			cube = turn_D(cube);
-		}
-		else if(d == 13){
-			cube = turn_Di(cube);
-		}
-		else if(d == 14){
-			cube = turn_D2(cube);
-		}
-		else if(d == 15){
 			cube = turn_B(cube);
 		}
-		else if(d == 16){
+		else if(d == 13){
 			cube = turn_Bi(cube);
 		}
-		else if(d == 17){
+		else if(d == 14){
 			cube = turn_B2(cube);
+		}
+		else if(d == 15){
+			cube = turn_D(cube);
+		}
+		else if(d == 16){
+			cube = turn_Di(cube);
+		}
+		else if(d == 17){
+			cube = turn_D2(cube);
 		}
 		
 		if(e == 0){
@@ -738,49 +739,49 @@ public class PocketCubeSolver {
 			cube = turn_U2(cube);
 		}
 		else if(e == 3){
-			cube = turn_F(cube);
-		}
-		else if(e == 4){
-			cube = turn_Fi(cube);
-		}
-		else if(e == 5){
-			cube = turn_F2(cube);
-		}
-		else if(e == 6){
-			cube = turn_R(cube);
-		}
-		else if(e == 7){
-			cube = turn_Ri(cube);
-		}
-		else if(e == 8){
-			cube = turn_R2(cube);
-		}
-		else if(e == 9){
 			cube = turn_L(cube);
 		}
-		else if(e == 10){
+		else if(e == 4){
 			cube = turn_Li(cube);
 		}
-		else if(e == 11){
+		else if(e == 5){
 			cube = turn_L2(cube);
 		}
+		else if(e == 6){
+			cube = turn_F(cube);
+		}
+		else if(e == 7){
+			cube = turn_Fi(cube);
+		}
+		else if(e == 8){
+			cube = turn_F2(cube);
+		}
+		else if(e == 9){
+			cube = turn_R(cube);
+		}
+		else if(e == 10){
+			cube = turn_Ri(cube);
+		}
+		else if(e == 11){
+			cube = turn_R2(cube);
+		}
 		else if(e == 12){
-			cube = turn_D(cube);
-		}
-		else if(e == 13){
-			cube = turn_Di(cube);
-		}
-		else if(e == 14){
-			cube = turn_D2(cube);
-		}
-		else if(e == 15){
 			cube = turn_B(cube);
 		}
-		else if(e == 16){
+		else if(e == 13){
 			cube = turn_Bi(cube);
 		}
-		else if(e == 17){
+		else if(e == 14){
 			cube = turn_B2(cube);
+		}
+		else if(e == 15){
+			cube = turn_D(cube);
+		}
+		else if(e == 16){
+			cube = turn_Di(cube);
+		}
+		else if(e == 17){
+			cube = turn_D2(cube);
 		}
 		
 		if(f == 0){
@@ -793,49 +794,49 @@ public class PocketCubeSolver {
 			cube = turn_U2(cube);
 		}
 		else if(f == 3){
-			cube = turn_F(cube);
-		}
-		else if(f == 4){
-			cube = turn_Fi(cube);
-		}
-		else if(f == 5){
-			cube = turn_F2(cube);
-		}
-		else if(f == 6){
-			cube = turn_R(cube);
-		}
-		else if(f == 7){
-			cube = turn_Ri(cube);
-		}
-		else if(f == 8){
-			cube = turn_R2(cube);
-		}
-		else if(f == 9){
 			cube = turn_L(cube);
 		}
-		else if(f == 10){
+		else if(f == 4){
 			cube = turn_Li(cube);
 		}
-		else if(f == 11){
+		else if(f == 5){
 			cube = turn_L2(cube);
 		}
+		else if(f == 6){
+			cube = turn_F(cube);
+		}
+		else if(f == 7){
+			cube = turn_Fi(cube);
+		}
+		else if(f == 8){
+			cube = turn_F2(cube);
+		}
+		else if(f == 9){
+			cube = turn_R(cube);
+		}
+		else if(f == 10){
+			cube = turn_Ri(cube);
+		}
+		else if(f == 11){
+			cube = turn_R2(cube);
+		}
 		else if(f == 12){
-			cube = turn_D(cube);
-		}
-		else if(f == 13){
-			cube = turn_Di(cube);
-		}
-		else if(f == 14){
-			cube = turn_D2(cube);
-		}
-		else if(f == 15){
 			cube = turn_B(cube);
 		}
-		else if(f == 16){
+		else if(f == 13){
 			cube = turn_Bi(cube);
 		}
-		else if(f == 17){
+		else if(f == 14){
 			cube = turn_B2(cube);
+		}
+		else if(f == 15){
+			cube = turn_D(cube);
+		}
+		else if(f == 16){
+			cube = turn_Di(cube);
+		}
+		else if(f == 17){
+			cube = turn_D2(cube);
 		}
 		
 		if(g == 0){
@@ -848,51 +849,51 @@ public class PocketCubeSolver {
 			cube = turn_U2(cube);
 		}
 		else if(g == 3){
-			cube = turn_F(cube);
-		}
-		else if(g == 4){
-			cube = turn_Fi(cube);
-		}
-		else if(g == 5){
-			cube = turn_F2(cube);
-		}
-		else if(g == 6){
-			cube = turn_R(cube);
-		}
-		else if(g == 7){
-			cube = turn_Ri(cube);
-		}
-		else if(g == 8){
-			cube = turn_R2(cube);
-		}
-		else if(g == 9){
 			cube = turn_L(cube);
 		}
-		else if(g == 10){
+		else if(g == 4){
 			cube = turn_Li(cube);
 		}
-		else if(g == 11){
+		else if(g == 5){
 			cube = turn_L2(cube);
 		}
+		else if(g == 6){
+			cube = turn_F(cube);
+		}
+		else if(g == 7){
+			cube = turn_Fi(cube);
+		}
+		else if(g == 8){
+			cube = turn_F2(cube);
+		}
+		else if(g == 9){
+			cube = turn_R(cube);
+		}
+		else if(g == 10){
+			cube = turn_Ri(cube);
+		}
+		else if(g == 11){
+			cube = turn_R2(cube);
+		}
 		else if(g == 12){
-			cube = turn_D(cube);
-		}
-		else if(g == 13){
-			cube = turn_Di(cube);
-		}
-		else if(g == 14){
-			cube = turn_D2(cube);
-		}
-		else if(g == 15){
 			cube = turn_B(cube);
 		}
-		else if(g == 16){
+		else if(g == 13){
 			cube = turn_Bi(cube);
 		}
-		else if(g == 17){
+		else if(g == 14){
 			cube = turn_B2(cube);
 		}
-
+		else if(g == 15){
+			cube = turn_D(cube);
+		}
+		else if(g == 16){
+			cube = turn_Di(cube);
+		}
+		else if(g == 17){
+			cube = turn_D2(cube);
+		}
+		
 		if(h == 0){
 			cube = turn_U(cube);
 		}
@@ -903,49 +904,49 @@ public class PocketCubeSolver {
 			cube = turn_U2(cube);
 		}
 		else if(h == 3){
-			cube = turn_F(cube);
-		}
-		else if(h == 4){
-			cube = turn_Fi(cube);
-		}
-		else if(h == 5){
-			cube = turn_F2(cube);
-		}
-		else if(h == 6){
-			cube = turn_R(cube);
-		}
-		else if(h == 7){
-			cube = turn_Ri(cube);
-		}
-		else if(h == 8){
-			cube = turn_R2(cube);
-		}
-		else if(h == 9){
 			cube = turn_L(cube);
 		}
-		else if(h == 10){
+		else if(h == 4){
 			cube = turn_Li(cube);
 		}
-		else if(h == 11){
+		else if(h == 5){
 			cube = turn_L2(cube);
 		}
+		else if(h == 6){
+			cube = turn_F(cube);
+		}
+		else if(h == 7){
+			cube = turn_Fi(cube);
+		}
+		else if(h == 8){
+			cube = turn_F2(cube);
+		}
+		else if(h == 9){
+			cube = turn_R(cube);
+		}
+		else if(h == 10){
+			cube = turn_Ri(cube);
+		}
+		else if(h == 11){
+			cube = turn_R2(cube);
+		}
 		else if(h == 12){
-			cube = turn_D(cube);
-		}
-		else if(h == 13){
-			cube = turn_Di(cube);
-		}
-		else if(h == 14){
-			cube = turn_D2(cube);
-		}
-		else if(h == 15){
 			cube = turn_B(cube);
 		}
-		else if(h == 16){
+		else if(h == 13){
 			cube = turn_Bi(cube);
 		}
-		else if(h == 17){
+		else if(h == 14){
 			cube = turn_B2(cube);
+		}
+		else if(h == 15){
+			cube = turn_D(cube);
+		}
+		else if(h == 16){
+			cube = turn_Di(cube);
+		}
+		else if(h == 17){
+			cube = turn_D2(cube);
 		}
 		
 		if(i == 0){
@@ -958,51 +959,50 @@ public class PocketCubeSolver {
 			cube = turn_U2(cube);
 		}
 		else if(i == 3){
-			cube = turn_F(cube);
-		}
-		else if(i == 4){
-			cube = turn_Fi(cube);
-		}
-		else if(i == 5){
-			cube = turn_F2(cube);
-		}
-		else if(i == 6){
-			cube = turn_R(cube);
-		}
-		else if(i == 7){
-			cube = turn_Ri(cube);
-		}
-		else if(i == 8){
-			cube = turn_R2(cube);
-		}
-		else if(i == 9){
 			cube = turn_L(cube);
 		}
-		else if(i == 10){
+		else if(i == 4){
 			cube = turn_Li(cube);
 		}
-		else if(i == 11){
+		else if(i == 5){
 			cube = turn_L2(cube);
 		}
+		else if(i == 6){
+			cube = turn_F(cube);
+		}
+		else if(i == 7){
+			cube = turn_Fi(cube);
+		}
+		else if(i == 8){
+			cube = turn_F2(cube);
+		}
+		else if(i == 9){
+			cube = turn_R(cube);
+		}
+		else if(i == 10){
+			cube = turn_Ri(cube);
+		}
+		else if(i == 11){
+			cube = turn_R2(cube);
+		}
 		else if(i == 12){
-			cube = turn_D(cube);
-		}
-		else if(i == 13){
-			cube = turn_Di(cube);
-		}
-		else if(i == 14){
-			cube = turn_D2(cube);
-		}
-		else if(i == 15){
 			cube = turn_B(cube);
 		}
-		else if(i == 16){
+		else if(i == 13){
 			cube = turn_Bi(cube);
 		}
-		else if(i == 17){
+		else if(i == 14){
 			cube = turn_B2(cube);
 		}
-
+		else if(i == 15){
+			cube = turn_D(cube);
+		}
+		else if(i == 16){
+			cube = turn_Di(cube);
+		}
+		else if(i == 17){
+			cube = turn_D2(cube);
+		}
 		
 		if(j == 0){
 			cube = turn_U(cube);
@@ -1014,49 +1014,49 @@ public class PocketCubeSolver {
 			cube = turn_U2(cube);
 		}
 		else if(j == 3){
-			cube = turn_F(cube);
-		}
-		else if(j == 4){
-			cube = turn_Fi(cube);
-		}
-		else if(j == 5){
-			cube = turn_F2(cube);
-		}
-		else if(j == 6){
-			cube = turn_R(cube);
-		}
-		else if(j == 7){
-			cube = turn_Ri(cube);
-		}
-		else if(j == 8){
-			cube = turn_R2(cube);
-		}
-		else if(j == 9){
 			cube = turn_L(cube);
 		}
-		else if(j == 10){
+		else if(j == 4){
 			cube = turn_Li(cube);
 		}
-		else if(j == 11){
+		else if(j == 5){
 			cube = turn_L2(cube);
 		}
+		else if(j == 6){
+			cube = turn_F(cube);
+		}
+		else if(j == 7){
+			cube = turn_Fi(cube);
+		}
+		else if(j == 8){
+			cube = turn_F2(cube);
+		}
+		else if(j == 9){
+			cube = turn_R(cube);
+		}
+		else if(j == 10){
+			cube = turn_Ri(cube);
+		}
+		else if(j == 11){
+			cube = turn_R2(cube);
+		}
 		else if(j == 12){
-			cube = turn_D(cube);
-		}
-		else if(j == 13){
-			cube = turn_Di(cube);
-		}
-		else if(j == 14){
-			cube = turn_D2(cube);
-		}
-		else if(j == 15){
 			cube = turn_B(cube);
 		}
-		else if(j == 16){
+		else if(j == 13){
 			cube = turn_Bi(cube);
 		}
-		else if(j == 17){
+		else if(j == 14){
 			cube = turn_B2(cube);
+		}
+		else if(j == 15){
+			cube = turn_D(cube);
+		}
+		else if(j == 16){
+			cube = turn_Di(cube);
+		}
+		else if(j == 17){
+			cube = turn_D2(cube);
 		}
 		
 		if(k == 0){
@@ -1069,52 +1069,53 @@ public class PocketCubeSolver {
 			cube = turn_U2(cube);
 		}
 		else if(k == 3){
-			cube = turn_F(cube);
-		}
-		else if(k == 4){
-			cube = turn_Fi(cube);
-		}
-		else if(k == 5){
-			cube = turn_F2(cube);
-		}
-		else if(k == 6){
-			cube = turn_R(cube);
-		}
-		else if(k == 7){
-			cube = turn_Ri(cube);
-		}
-		else if(k == 8){
-			cube = turn_R2(cube);
-		}
-		else if(k == 9){
 			cube = turn_L(cube);
 		}
-		else if(k == 10){
+		else if(k == 4){
 			cube = turn_Li(cube);
 		}
-		else if(k == 11){
+		else if(k == 5){
 			cube = turn_L2(cube);
 		}
+		else if(k == 6){
+			cube = turn_F(cube);
+		}
+		else if(k == 7){
+			cube = turn_Fi(cube);
+		}
+		else if(k == 8){
+			cube = turn_F2(cube);
+		}
+		else if(k == 9){
+			cube = turn_R(cube);
+		}
+		else if(k == 10){
+			cube = turn_Ri(cube);
+		}
+		else if(k == 11){
+			cube = turn_R2(cube);
+		}
 		else if(k == 12){
-			cube = turn_D(cube);
-		}
-		else if(k == 13){
-			cube = turn_Di(cube);
-		}
-		else if(k == 14){
-			cube = turn_D2(cube);
-		}
-		else if(k == 15){
 			cube = turn_B(cube);
 		}
-		else if(k == 16){
+		else if(k == 13){
 			cube = turn_Bi(cube);
 		}
-		else if(k == 17){
+		else if(k == 14){
 			cube = turn_B2(cube);
 		}
+		else if(k == 15){
+			cube = turn_D(cube);
+		}
+		else if(k == 16){
+			cube = turn_Di(cube);
+		}
+		else if(k == 17){
+			cube = turn_D2(cube);
+		}
 		//check to see if cube is solved
-	
+	     
+		
 			if(cube[0][0] != cube[0][1] || cube[0][0] != cube[0][2] || cube[0][0] != cube[0][3]){
 				result1 = false;
 			}
@@ -1164,6 +1165,10 @@ public class PocketCubeSolver {
 		print_sides(cube, 5, 1);
 	} 
 	
+	public static void call_turn(int [][] cube, int not_sure){
+		
+	}
+	
 	public static boolean continue_sequence(int x, int y){
 
         if(x >= 0 && y == -1){
@@ -1174,34 +1179,56 @@ public class PocketCubeSolver {
         }
         if(x >= 0 && skip_opposite_turns(x,y)) {
         	  return false;
-        	}
+        }
         else{
         	return true;
     	}
 	}
 	public static boolean skip_opposite_turns(int x, int y){
-		
-		if(side_number(0) == x && side_number(5) == y){
+		/*
+		if(x == 0 && y == 5){
 			return false;
 		}
-		else if(side_number(5) == x && side_number(0) == y){
+		else if(x == 5 && y == 0){
 			return true;
 		}
-		else if(side_number(1) == x && side_number(3) == y){
+		else if(x == 1	&& y == 3){
 			return false;
 		}
-		else if(side_number(3) == x && side_number(1) == y){
+		else if(x == 3 && y == 1){
 			return true;
 		}
-		else if(side_number(2) == x && side_number(4) == y){
-			return false;	
+		else if(x == 2 && y == 4){
+			return false;
 		}
-		else if(side_number(4) == x && side_number(2) == y){
+		else if(x == 4 && y == 2){
 			return true;
 		}
+		return true;
+		*/
 		
+		if(side_number(x) == 0 && side_number(y) == 5){
+			return false;
+		}
+		else if(side_number(x) == 5 && side_number(y) == 0){
+			return true;
+		}
+		else if(side_number(x) == 1 && side_number(y) == 3){
+			return false;
+		}
+		else if(side_number(x) == 3 && side_number(y) == 1){
+			return true;
+		}
+		else if(side_number(x) == 2 && side_number(y) == 4){
+			return false;
+		}
+		else if(side_number(x) == 4 && side_number(y) == 2){
+			return true;
+		}
+
+
+
 		return false;
-		
 	}
 	public static int side_number(int x){
 		
@@ -1291,7 +1318,7 @@ public class PocketCubeSolver {
 													if(continue_sequence(j,k)){
 										System.out.println("Testing combination:"+ counter);
 										solved = test(a,b,c,d,e,f,g,h,i,j,k);
-											while(counter > 500){
+											while(counter > 600){
 												System.exit(0);
 											}
 										if(solved){
