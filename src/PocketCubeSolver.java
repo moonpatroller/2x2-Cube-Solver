@@ -181,65 +181,7 @@ public class PocketCubeSolver {
 		System.out.print("F2 ");
 		return cube;
 	}
-	public static int[][] turn_R(int cube[][]){
-		 turn_CW(cube,3);
-		 int cube0_1 = cube[0][1];
-		 int cube0_3 = cube[0][3];
-		 
-		 cube[0][1] = cube[2][1];
-		 cube[0][3] = cube[2][3];
-		 
-		 cube[2][1] = cube[5][1];
-		 cube[2][3] = cube[5][3];
-		 
-		 cube[5][1] = cube[4][2];
-		 cube[5][3] = cube[4][0];
-		 
-		 cube[4][2] = cube0_1;
-		 cube[4][0] = cube0_3;
-		 System.out.print("R ");
-		 return cube;
-	}
-	public static int[][] turn_Ri(int cube[][]){
-		turn_CC(cube, 3);
-		int cube0_1 = cube[0][1];
-		int cube0_3 = cube[0][3];
-		
-		cube[0][1] = cube[4][2];
-		cube[0][3] = cube[4][0];
-		
-		cube[4][2] = cube[5][1];
-		cube[4][0] = cube[5][3];
-		
-		cube[5][1] = cube[2][1];
-		cube[5][3] = cube[2][3];
-		
-		cube[2][1] = cube0_1;
-		cube[2][3] = cube0_3;
-		System.out.print("Ri ");	
-		return cube;
-	}
-	public static int[][] turn_R2(int cube[][]){
-		turn_C2(cube,3);
-		int cube0_1 = cube[0][1];
-		int cube0_3 = cube[0][3];
-		int cube2_1 = cube[2][1];
-		int cube2_3 = cube[2][3];
-		
-		cube[0][1] = cube[5][1];
-		cube[0][3] = cube[5][3];
-		
-		cube[2][1] = cube[4][2];
-		cube[2][3] = cube[4][0];
-		
-		cube[4][2] = cube2_1;
-		cube[4][0] = cube2_3;
-		
-		cube[5][3] = cube0_3;
-		cube[5][1] = cube0_1;
-		System.out.print("R2 ");	
-		return cube;
-	}
+	
 	public static int[][] turn_L(int cube[][]){
 		 turn_CW(cube,1);
 		 int cube0_0 = cube[0][0];
@@ -299,130 +241,8 @@ public class PocketCubeSolver {
 		System.out.print("L2 ");
 		return cube;
 	}
-	public static int[][] turn_D(int cube[][]){
-		 turn_CW(cube,5);
-		 int cube2_2 = cube[2][2];
-		 int cube2_3 = cube[2][3];
-		 
-		 cube[2][2] = cube[1][2];
-		 cube[2][3] = cube[1][3];
-		 
-		 cube[1][2] = cube[4][2];
-		 cube[1][3] = cube[4][3];
-		 
-		 cube[4][2] = cube[3][2];
-		 cube[4][3] = cube[3][3];
-		 
-		 cube[3][2] = cube2_2;
-		 cube[3][3] = cube2_3;
-		 System.out.print("D ");
-		 return cube;
-		 
-	}
-	public static int[][] turn_Di(int cube[][]){
-		turn_CC(cube, 5);
-		int cube2_2 = cube[2][2];
-		int cube2_3 = cube[2][3];
 		
-		cube[2][2] = cube[3][2];
-		cube[2][3] = cube[3][3];
-		
-		cube[3][2] = cube[4][2];
-		cube[3][3] = cube[4][3];
-		
-		cube[4][2] = cube[1][2];
-		cube[4][3] = cube[1][3];
-		
-		cube[1][2] = cube2_2;
-		cube[1][3] = cube2_3;
-		System.out.print("Di ");
-		return cube;
-	}
-	public static int[][] turn_D2(int cube[][]){
-		turn_C2(cube,5);
-		int cube2_2 = cube[2][2];
-		int cube2_3	= cube[2][3];
-		int cube3_2	= cube[3][2];
-		int cube3_3	= cube[3][3];
-		
-		cube[2][2] = cube[4][2];
-		cube[2][3] = cube[4][3];
-		
-		cube[3][2] = cube[1][2];
-		cube[3][3] = cube[1][3];
-		
-		cube[4][2] = cube2_2;
-		cube[4][3] = cube2_3;
-		
-		cube[1][2] = cube3_2;
-		cube[1][3] = cube3_3;
-		System.out.print("D2 ");
-		return cube;
-	}
-	public static int[][] turn_B(int cube[][]){
-		 turn_CW(cube,4);
-		 int cube0_0 = cube[0][0];
-		 int cube0_1 = cube[0][1];
-		 
-		 cube[0][0] = cube[3][1];
-		 cube[0][1] = cube[3][3];
-		 
-		 cube[3][1] = cube[5][3];
-		 cube[3][3] = cube[5][2];
-		 
-		 cube[5][3] = cube[1][2];
-		 cube[5][2] = cube[1][0];
-		 
-		 cube[1][2] = cube0_0;
-		 cube[1][0] = cube0_1;
-		 System.out.print("B ");
-		 return cube;
-	 }
-	 
-	public static int[][] turn_Bi(int cube[][]){
-		turn_CC(cube,4);
-		int cube0_0 = cube[0][0];
-		int cube0_1 = cube[0][1];
-		
-		cube[0][0] = cube[1][2];
-		cube[0][1] = cube[1][0];
-		
-		cube[1][2] = cube[5][3];
-		cube[1][0] = cube[5][2];
-		
-		cube[5][3] = cube[3][1];
-		cube[5][2] = cube[3][3];
-		
-		cube[3][1] = cube0_0;
-		cube[3][3] = cube0_1;
 	
-		System.out.print("Bi ");
-		return cube;
-	}
-	public static int[][] turn_B2(int cube[][]){
-		turn_C2(cube,4);
-		int cube0_0 = cube[0][0];
-		int cube0_1 = cube[0][1];
-		int cube1_0 = cube[1][0];
-		int cube1_2 = cube[1][2];
-		
-		cube[0][0] = cube[5][3];
-		cube[0][1] = cube[5][2];
-		
-		cube[1][0] = cube[3][3];
-		cube[1][2] = cube[3][1];
-		
-		cube[5][3] = cube0_0;
-		cube[5][2] = cube0_1;
-		
-		cube[3][3] = cube1_0;
-		cube[3][1] = cube1_2;
-		System.out.print("B2 ");
-		return cube;
-		
-	}
-		
-	// check if  all orientation
 	public static int[][] scan_cube(){
 	//input is the colors that we get and will be returned as is
 		int input[][] = new int[6][4];
@@ -536,33 +356,7 @@ public class PocketCubeSolver {
 		else if(a == 8){
 			cube = turn_F2(cube);
 		}
-		else if(a == 9){
-			cube = turn_R(cube);
-		}
-		else if(a == 10){
-			cube = turn_Ri(cube);
-		}
-		else if(a == 11){
-			cube = turn_R2(cube);
-		}
-		else if(a == 12){
-			cube = turn_B(cube);
-		}
-		else if(a == 13){
-			cube = turn_Bi(cube);
-		}
-		else if(a == 14){
-			cube = turn_B2(cube);
-		}
-		else if(a == 15){
-			cube = turn_D(cube);
-		}
-		else if(a == 16){
-			cube = turn_Di(cube);
-		}
-		else if(a == 17){
-			cube = turn_D2(cube);
-		}
+		
 		
 		if(b == 0){
 			cube = turn_U(cube);
@@ -591,33 +385,7 @@ public class PocketCubeSolver {
 		else if(b == 8){
 			cube = turn_F2(cube);
 		}
-		else if(b == 9){
-			cube = turn_R(cube);
-		}
-		else if(b == 10){
-			cube = turn_Ri(cube);
-		}
-		else if(b == 11){
-			cube = turn_R2(cube);
-		}
-		else if(b == 12){
-			cube = turn_B(cube);
-		}
-		else if(b == 13){
-			cube = turn_Bi(cube);
-		}
-		else if(b == 14){
-			cube = turn_B2(cube);
-		}
-		else if(b == 15){
-			cube = turn_D(cube);
-		}
-		else if(b == 16){
-			cube = turn_Di(cube);
-		}
-		else if(b == 17){
-			cube = turn_D2(cube);
-		}
+		
 		
 		if(c == 0){
 			cube = turn_U(cube);
@@ -646,33 +414,7 @@ public class PocketCubeSolver {
 		else if(c == 8){
 			cube = turn_F2(cube);
 		}
-		else if(c == 9){
-			cube = turn_R(cube);
-		}
-		else if(c == 10){
-			cube = turn_Ri(cube);
-		}
-		else if(c == 11){
-			cube = turn_R2(cube);
-		}
-		else if(c == 12){
-			cube = turn_B(cube);
-		}
-		else if(c == 13){
-			cube = turn_Bi(cube);
-		}
-		else if(c == 14){
-			cube = turn_B2(cube);
-		}
-		else if(c == 15){
-			cube = turn_D(cube);
-		}
-		else if(c == 16){
-			cube = turn_Di(cube);
-		}
-		else if(c == 17){
-			cube = turn_D2(cube);
-		}
+		
 		
 		if(d == 0){
 			cube = turn_U(cube);
@@ -701,33 +443,7 @@ public class PocketCubeSolver {
 		else if(d == 8){
 			cube = turn_F2(cube);
 		}
-		else if(d == 9){
-			cube = turn_R(cube);
-		}
-		else if(d == 10){
-			cube = turn_Ri(cube);
-		}
-		else if(d == 11){
-			cube = turn_R2(cube);
-		}
-		else if(d == 12){
-			cube = turn_B(cube);
-		}
-		else if(d == 13){
-			cube = turn_Bi(cube);
-		}
-		else if(d == 14){
-			cube = turn_B2(cube);
-		}
-		else if(d == 15){
-			cube = turn_D(cube);
-		}
-		else if(d == 16){
-			cube = turn_Di(cube);
-		}
-		else if(d == 17){
-			cube = turn_D2(cube);
-		}
+		
 		
 		if(e == 0){
 			cube = turn_U(cube);
@@ -755,33 +471,6 @@ public class PocketCubeSolver {
 		}
 		else if(e == 8){
 			cube = turn_F2(cube);
-		}
-		else if(e == 9){
-			cube = turn_R(cube);
-		}
-		else if(e == 10){
-			cube = turn_Ri(cube);
-		}
-		else if(e == 11){
-			cube = turn_R2(cube);
-		}
-		else if(e == 12){
-			cube = turn_B(cube);
-		}
-		else if(e == 13){
-			cube = turn_Bi(cube);
-		}
-		else if(e == 14){
-			cube = turn_B2(cube);
-		}
-		else if(e == 15){
-			cube = turn_D(cube);
-		}
-		else if(e == 16){
-			cube = turn_Di(cube);
-		}
-		else if(e == 17){
-			cube = turn_D2(cube);
 		}
 		
 		if(f == 0){
@@ -811,33 +500,7 @@ public class PocketCubeSolver {
 		else if(f == 8){
 			cube = turn_F2(cube);
 		}
-		else if(f == 9){
-			cube = turn_R(cube);
-		}
-		else if(f == 10){
-			cube = turn_Ri(cube);
-		}
-		else if(f == 11){
-			cube = turn_R2(cube);
-		}
-		else if(f == 12){
-			cube = turn_B(cube);
-		}
-		else if(f == 13){
-			cube = turn_Bi(cube);
-		}
-		else if(f == 14){
-			cube = turn_B2(cube);
-		}
-		else if(f == 15){
-			cube = turn_D(cube);
-		}
-		else if(f == 16){
-			cube = turn_Di(cube);
-		}
-		else if(f == 17){
-			cube = turn_D2(cube);
-		}
+		
 		
 		if(g == 0){
 			cube = turn_U(cube);
@@ -866,33 +529,7 @@ public class PocketCubeSolver {
 		else if(g == 8){
 			cube = turn_F2(cube);
 		}
-		else if(g == 9){
-			cube = turn_R(cube);
-		}
-		else if(g == 10){
-			cube = turn_Ri(cube);
-		}
-		else if(g == 11){
-			cube = turn_R2(cube);
-		}
-		else if(g == 12){
-			cube = turn_B(cube);
-		}
-		else if(g == 13){
-			cube = turn_Bi(cube);
-		}
-		else if(g == 14){
-			cube = turn_B2(cube);
-		}
-		else if(g == 15){
-			cube = turn_D(cube);
-		}
-		else if(g == 16){
-			cube = turn_Di(cube);
-		}
-		else if(g == 17){
-			cube = turn_D2(cube);
-		}
+		
 		
 		if(h == 0){
 			cube = turn_U(cube);
@@ -921,34 +558,7 @@ public class PocketCubeSolver {
 		else if(h == 8){
 			cube = turn_F2(cube);
 		}
-		else if(h == 9){
-			cube = turn_R(cube);
-		}
-		else if(h == 10){
-			cube = turn_Ri(cube);
-		}
-		else if(h == 11){
-			cube = turn_R2(cube);
-		}
-		else if(h == 12){
-			cube = turn_B(cube);
-		}
-		else if(h == 13){
-			cube = turn_Bi(cube);
-		}
-		else if(h == 14){
-			cube = turn_B2(cube);
-		}
-		else if(h == 15){
-			cube = turn_D(cube);
-		}
-		else if(h == 16){
-			cube = turn_Di(cube);
-		}
-		else if(h == 17){
-			cube = turn_D2(cube);
-		}
-		
+				
 		if(i == 0){
 			cube = turn_U(cube);
 		}
@@ -976,33 +586,7 @@ public class PocketCubeSolver {
 		else if(i == 8){
 			cube = turn_F2(cube);
 		}
-		else if(i == 9){
-			cube = turn_R(cube);
-		}
-		else if(i == 10){
-			cube = turn_Ri(cube);
-		}
-		else if(i == 11){
-			cube = turn_R2(cube);
-		}
-		else if(i == 12){
-			cube = turn_B(cube);
-		}
-		else if(i == 13){
-			cube = turn_Bi(cube);
-		}
-		else if(i == 14){
-			cube = turn_B2(cube);
-		}
-		else if(i == 15){
-			cube = turn_D(cube);
-		}
-		else if(i == 16){
-			cube = turn_Di(cube);
-		}
-		else if(i == 17){
-			cube = turn_D2(cube);
-		}
+		
 		
 		if(j == 0){
 			cube = turn_U(cube);
@@ -1031,33 +615,7 @@ public class PocketCubeSolver {
 		else if(j == 8){
 			cube = turn_F2(cube);
 		}
-		else if(j == 9){
-			cube = turn_R(cube);
-		}
-		else if(j == 10){
-			cube = turn_Ri(cube);
-		}
-		else if(j == 11){
-			cube = turn_R2(cube);
-		}
-		else if(j == 12){
-			cube = turn_B(cube);
-		}
-		else if(j == 13){
-			cube = turn_Bi(cube);
-		}
-		else if(j == 14){
-			cube = turn_B2(cube);
-		}
-		else if(j == 15){
-			cube = turn_D(cube);
-		}
-		else if(j == 16){
-			cube = turn_Di(cube);
-		}
-		else if(j == 17){
-			cube = turn_D2(cube);
-		}
+		
 		
 		if(k == 0){
 			cube = turn_U(cube);
@@ -1086,33 +644,7 @@ public class PocketCubeSolver {
 		else if(k == 8){
 			cube = turn_F2(cube);
 		}
-		else if(k == 9){
-			cube = turn_R(cube);
-		}
-		else if(k == 10){
-			cube = turn_Ri(cube);
-		}
-		else if(k == 11){
-			cube = turn_R2(cube);
-		}
-		else if(k == 12){
-			cube = turn_B(cube);
-		}
-		else if(k == 13){
-			cube = turn_Bi(cube);
-		}
-		else if(k == 14){
-			cube = turn_B2(cube);
-		}
-		else if(k == 15){
-			cube = turn_D(cube);
-		}
-		else if(k == 16){
-			cube = turn_Di(cube);
-		}
-		else if(k == 17){
-			cube = turn_D2(cube);
-		}
+		
 		//check to see if cube is solved
 	     
 		
@@ -1156,7 +688,6 @@ public class PocketCubeSolver {
 		for(int x = 0; x < 4; x++){
 			cube[5][x] = cube1[5][x];
 		}
-	
 	}
 		
 	static void print_cube(int[][] cube) {
@@ -1185,27 +716,6 @@ public class PocketCubeSolver {
     	}
 	}
 	public static boolean skip_opposite_turns(int x, int y){
-		/*
-		if(x == 0 && y == 5){
-			return false;
-		}
-		else if(x == 5 && y == 0){
-			return true;
-		}
-		else if(x == 1	&& y == 3){
-			return false;
-		}
-		else if(x == 3 && y == 1){
-			return true;
-		}
-		else if(x == 2 && y == 4){
-			return false;
-		}
-		else if(x == 4 && y == 2){
-			return true;
-		}
-		return true;
-		*/
 		
 		if(side_number(x) == 0 && side_number(y) == 5){
 			return false;
@@ -1225,9 +735,7 @@ public class PocketCubeSolver {
 		else if(side_number(x) == 4 && side_number(y) == 2){
 			return true;
 		}
-
-
-
+		
 		return false;
 	}
 	public static int side_number(int x){
@@ -1254,6 +762,10 @@ public class PocketCubeSolver {
 		return x;
 	}
 	
+	public static void store_combination(int cube[][]){
+		
+		
+	}
 	
 	public static void main(String[] args){
 	
@@ -1294,63 +806,61 @@ public class PocketCubeSolver {
 		for(int x = 0; x < 4; x++){
 			cube1[5][x] = cube[5][x];
 		}
+		
+		//save cube position for user in case orientation is forgotten.
+		for(int x = 0; x < 4; x++){
+			saved_cube[0][x] = cube[0][x];
+		}
+		for(int x = 0; x < 4; x++){
+			saved_cube[1][x] = cube[1][x];
+		}
+		for(int x = 0; x < 4; x++){
+			saved_cube[2][x] = cube[2][x];
+		}
+		for(int x = 0; x < 4; x++){
+			saved_cube[3][x] = cube[3][x];
+		}
+		for(int x = 0; x < 4; x++){
+			saved_cube[4][x] = cube[4][x];
+		}
+		for(int x = 0; x < 4; x++){
+			saved_cube[5][x] = cube[5][x];
+		}
+		
+
 		//18 ways the cube can be turned 
-		for(int a = -1; a < 18; a++){
-			for(int b = -1; b < 18; b++){
+		for(int a = -1; a < 10; a++){
+			for(int b = -1; b < 10; b++){
 				if(continue_sequence(a,b))
-				for(int c = -1; c < 18;c++ ){
+				for(int c = -1; c < 10;c++ ){
 					if(continue_sequence(b,c))
-					for(int d = -1; d < 18; d++){
+					for(int d = -1; d < 10; d++){
 						if(continue_sequence(c,d))
-						for(int e = -1; e < 18; e++){
+						for(int e = -1; e < 10; e++){
 							if(continue_sequence(d,e))
-							for(int f = -1; f < 18; f++){
+							for(int f = -1; f < 10; f++){
 								if(continue_sequence(e,f))
-								for(int g = -1; g < 18; g++){
+								for(int g = -1; g < 10; g++){
 									if(continue_sequence(f,g))
-									for(int h = -1; h < 18; h++){
+									for(int h = -1; h < 10; h++){
 										if(continue_sequence(g,h))
-										for(int i = -1; i < 18; i++){
+										for(int i = -1; i < 10; i++){
 											if(continue_sequence(h,i))
-											for(int j = -1; j < 18; j++){
+											for(int j = -1; j < 10; j++){
 												if(continue_sequence(i,j))
-												for(int k = -1;k < 18; k++){
+												for(int k = -1;k < 10; k++){
 													if(continue_sequence(j,k)){
 										System.out.println("Testing combination:"+ counter);
 										solved = test(a,b,c,d,e,f,g,h,i,j,k);
-											while(counter > 600){
-												System.exit(0);
-											}
+										
 										if(solved){
-				
-											System.out.println("\n HOW TO DECODE YOUR SCRAMBLE: \n"
-													+ "0 == no turn\n"
-													+ "U = 0\n"
-													+ "Ui = 1\n"
-													+ "U2 = 2\n"
-													+ "F = 3\n"
-													+ "Fi = 4\n"
-													+ "F2 = 5\n"
-													+ "R = 6\n"
-													+ "Ri = 7\n"
-													+ "R2 = 8\n"
-													+ "L = 9\n"
-													+ "Li = 10\n"
-													+ "L2 = 11\n"
-													+ "D = 12\n"
-													+ "Di = 13\n"
-													+ "D2 = 14\n"
-													+ "B = 15\n"
-													+ "Bi = 16\n"
-													+ "B = 17\n");
-											System.out.println("This was your scramble");
+											
+											System.out.println();
+											System.out.println("Your cube has been solved, the solution is above this line");
+											System.out.println("In case you forgot the position of your cube here it is ;) ");
+											
+											cube = saved_cube;
 											print_cube(cube);
-											System.out.println("\n"+a+"\n"+
-													b+"\n"+c+"\n"+
-													d+"\n"+e+"\n"+
-													f+"\n"+g+"\n"+
-													h+"\n"+i+"\n"+j+"\n"+k+"\n");
-											System.out.println("SOLVED!! :) ");
 														}
 													
 											resetColors();
