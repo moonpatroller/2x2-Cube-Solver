@@ -4,7 +4,7 @@ import java.util.Scanner;
   The goal for this program is to go through all the possible combinations of the 2x2x2 rubiks cube 
   and to give you the solution to the scramble you have on your cube so that you can solve it. :) 
   
-  ther are 18 moves that can be applied to the 2x2 cube it has to go through every combination 10 times
+  ther are 9 moves that can be applied to the 2x2 cube it has to go through every combination 11 times
   
   there are 
   3674160 different combinations for the 2x2
