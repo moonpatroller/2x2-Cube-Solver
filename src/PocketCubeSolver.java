@@ -765,6 +765,7 @@ public class PocketCubeSolver {
 	public static void store_combination(int cube[][]){
 		
 		
+		
 	}
 	
 	public static void main(String[] args){
@@ -828,7 +829,7 @@ public class PocketCubeSolver {
 		}
 		
 
-		//18 ways the cube can be turned 
+		//9 ways the cube can be turned 
 		for(int a = -1; a < 10; a++){
 			for(int b = -1; b < 10; b++){
 				if(continue_sequence(a,b))
