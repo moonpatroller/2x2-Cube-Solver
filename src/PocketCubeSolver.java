@@ -242,6 +242,8 @@ public class PocketCubeSolver {
 		return cube;
 	}
 		
+	//Ui Li U Fi U2 F Ui Li F2 L2
+	
 	
 	public static int[][] scan_cube(){
 	//input is the colors that we get and will be returned as is
@@ -708,35 +710,8 @@ public class PocketCubeSolver {
         else if(x >= 0 && side_number(x) == side_number(y)){
         	return false;
         }
-        if(x >= 0 && skip_opposite_turns(x,y)) {
-        	  return false;
-        }
-        else{
         	return true;
     	}
-	}
-	public static boolean skip_opposite_turns(int x, int y){
-		
-		if(side_number(x) == 0 && side_number(y) == 5){
-			return false;
-		}
-		else if(side_number(x) == 5 && side_number(y) == 0){
-			return true;
-		}
-		else if(side_number(x) == 1 && side_number(y) == 3){
-			return false;
-		}
-		else if(side_number(x) == 3 && side_number(y) == 1){
-			return true;
-		}
-		else if(side_number(x) == 2 && side_number(y) == 4){
-			return false;
-		}
-		else if(side_number(x) == 4 && side_number(y) == 2){
-			return true;
-		}
-		
-		return false;
 	}
 	public static int side_number(int x){
 		
@@ -748,15 +723,6 @@ public class PocketCubeSolver {
 		}
 		else if(x == 6 || x == 7 || x == 8){
 			return 2;
-		}
-		else if(x == 9 || x == 10 || x == 11){
-			return 3;
-		}
-		else if(x == 12 || x == 13 || x == 14){
-			return 4;	
-		}
-		else if(x == 15 || x == 16 || x == 17){
-			return 5;
 		}
 			
 		return x;
@@ -828,7 +794,6 @@ public class PocketCubeSolver {
 			saved_cube[5][x] = cube[5][x];
 		}
 		
-
 		//9 ways the cube can be turned 
 		for(int a = -1; a < 10; a++){
 			for(int b = -1; b < 10; b++){
