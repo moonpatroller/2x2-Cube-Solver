@@ -23,7 +23,6 @@ public class GUI_input {
     
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		final int WINDOW_HEIGHT = 208;
 		final int WINDOW_WIDTH =350;
@@ -45,7 +44,6 @@ public class GUI_input {
 
 
 	private static void Componenets() {
-		// TODO Auto-generated method stub
 		panel.setLayout(null);
 		window.add(panel);
 		

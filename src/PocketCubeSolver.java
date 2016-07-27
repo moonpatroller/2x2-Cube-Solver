@@ -1,10 +1,11 @@
+
 import java.util.Scanner;
 
 /*
   The goal for this program is to go through all the possible combinations of the 2x2x2 rubiks cube 
   and to give you the solution to the scramble you have on your cube so that you can solve it. :) 
   
-  ther are 9 moves that can be applied to the 2x2 cube it has to go through every combination 11 times
+  there are 9 moves that can be applied to the 2x2 cube it has to go through every combination 11 times
   
   there are 
   3674160 different combinations for the 2x2
@@ -13,7 +14,7 @@ import java.util.Scanner;
   
  */
 public class PocketCubeSolver {
-	public static int cube[][] = new int [6][4];
+	
 	public static int cube1[][] = new int [6][4];
 	public static int saved_cube[][] = new int [6][4];
 	public static boolean solved = false;
@@ -31,11 +32,11 @@ public class PocketCubeSolver {
 					}
 				for(int column = 0; column < 2; column++) {
 					int sticker = (2 * line) + column;
-					System.out.print(ColorNames [cube[side][sticker]]);
+					System.out.print(ColorNames[cube[side][sticker]]);
 				}
 			}
 		System.out.println();
-			}
+		}
 	}
 	public static void turn_CW(int cube[][], int side_num){
 		  
@@ -255,9 +256,7 @@ public class PocketCubeSolver {
 		Scanner in = new Scanner(System.in);
 		//Collect the data
 			System.out.println("Welcome to the 2x2x2 cube solver :)\n \n"
-					+ "Hold the cube in a position that you will remember \n"
-					+ "and won't change because the 2x2 has no centers.\nRemembering "
-					+ "block colors would be helpful\nE.I: RED 1x1x2 block on top of blue piece\n \n");
+					+ "Please enter your cube");
 			
 			
 			System.out.println(" 0 = white \n 1 = orange \n 2 = green \n 3 = red\n 4 = blue\n 5 = yellow\n");
@@ -267,9 +266,8 @@ public class PocketCubeSolver {
 				counter1 = 0;
 				
 				input[0][counter0] = Integer.parseInt(in.nextLine());
-				counter0++;
+				counter0++;	
 			}
-			
 			System.out.println(" 0 = white \n 1 = orange \n 2 = green \n 3 = red\n 4 = blue\n 5 = yellow\n");
 			System.out.println("Enter the colors for the LEFT side");
 			
@@ -280,7 +278,6 @@ public class PocketCubeSolver {
 				input[1][counter0] = Integer.parseInt(in.nextLine());
 				counter0++;
 			}
-			
 			System.out.println(" 0 = white \n 1 = orange \n 2 = green \n 3 = red\n 4 = blue\n 5 = yellow\n");
 			System.out.println("Enter the colors for the FRONT side");
 			//reset the counter
@@ -290,7 +287,6 @@ public class PocketCubeSolver {
 				input[2][counter0] = Integer.parseInt(in.nextLine());
 				counter0++;
 			}
-			
 			System.out.println(" 0 = white \n 1 = orange \n 2 = green \n 3 = red\n 4 = blue\n 5 = yellow\n");
 			System.out.println("Enter the colors for the RIGHT side");
 			//reset the counter
@@ -300,7 +296,6 @@ public class PocketCubeSolver {
 				input[3][counter0] = Integer.parseInt(in.nextLine());
 				counter0++;
 			}
-			
 			System.out.println(" 0 = white \n 1 = orange \n 2 = green \n 3 = red\n 4 = blue\n 5 = yellow\n");
 			System.out.println("Enter the colors for the BACK SIDE");
 			//reset the counter
@@ -310,8 +305,6 @@ public class PocketCubeSolver {
 				input[4][counter0] = Integer.parseInt(in.nextLine());
 				counter0++;
 			}
-			
-			//get colors for the red side
 			System.out.println("NOTE: Rotate cube back to starting position before rotating the cube\n"
 					+ "for the bottom side input\n");
 			
@@ -328,367 +321,361 @@ public class PocketCubeSolver {
 	}
 	
 	public static boolean test(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k){
-		boolean result1 = true;
+		boolean solved = true;
 		
 		
 		if(a == 0){
-			cube = turn_U(cube);
+			StoreState.cube = turn_U(StoreState.cube);
 		}
 		else if(a == 1){
-			cube = turn_Ui(cube);
+			StoreState.cube = turn_Ui(StoreState.cube);
 		}
 		else if(a == 2){
-			cube = turn_U2(cube);
+			StoreState.cube = turn_U2(StoreState.cube);
 		}
 		else if(a == 3){
-			cube = turn_L(cube);
+			StoreState.cube = turn_L(StoreState.cube);
 		}
 		else if(a == 4){
-			cube = turn_Li(cube);
+			StoreState.cube = turn_Li(StoreState.cube);
 		}
 		else if(a == 5){
-			cube = turn_L2(cube);
+			StoreState.cube = turn_L2(StoreState.cube);
 		}
 		else if(a == 6){
-			cube = turn_F(cube);
+			StoreState.cube = turn_F(StoreState.cube);
 		}
 		else if(a == 7){
-			cube = turn_Fi(cube);
+			StoreState.cube = turn_Fi(StoreState.cube);
 		}
 		else if(a == 8){
-			cube = turn_F2(cube);
+			StoreState.cube = turn_F2(StoreState.cube);
 		}
 		
 		
 		if(b == 0){
-			cube = turn_U(cube);
+			StoreState.cube = turn_U(StoreState.cube);
 		}
 		else if(b == 1){
-			cube = turn_Ui(cube);
+			StoreState.cube = turn_Ui(StoreState.cube);
 		}
 		else if(b == 2){
-			cube = turn_U2(cube);
+			StoreState.cube = turn_U2(StoreState.cube);
 		}
 		else if(b == 3){
-			cube = turn_L(cube);
+			StoreState.cube = turn_L(StoreState.cube);
 		}
 		else if(b == 4){
-			cube = turn_Li(cube);
+			StoreState.cube = turn_Li(StoreState.cube);
 		}
 		else if(b == 5){
-			cube = turn_L2(cube);
+			StoreState.cube = turn_L2(StoreState.cube);
 		}
 		else if(b == 6){
-			cube = turn_F(cube);
+			StoreState.cube = turn_F(StoreState.cube);
 		}
 		else if(b == 7){
-			cube = turn_Fi(cube);
+			StoreState.cube = turn_Fi(StoreState.cube);
 		}
 		else if(b == 8){
-			cube = turn_F2(cube);
+			StoreState.cube = turn_F2(StoreState.cube);
 		}
-		
 		
 		if(c == 0){
-			cube = turn_U(cube);
+			StoreState.cube = turn_U(StoreState.cube);
 		}
 		else if(c == 1){
-			cube = turn_Ui(cube);
+			StoreState.cube = turn_Ui(StoreState.cube);
 		}
 		else if(c == 2){
-			cube = turn_U2(cube);
+			StoreState.cube = turn_U2(StoreState.cube);
 		}
 		else if(c == 3){
-			cube = turn_L(cube);
+			StoreState.cube = turn_L(StoreState.cube);
 		}
 		else if(c == 4){
-			cube = turn_Li(cube);
+			StoreState.cube = turn_Li(StoreState.cube);
 		}
 		else if(c == 5){
-			cube = turn_L2(cube);
+			StoreState.cube = turn_L2(StoreState.cube);
 		}
 		else if(c == 6){
-			cube = turn_F(cube);
+			StoreState.cube = turn_F(StoreState.cube);
 		}
 		else if(c == 7){
-			cube = turn_Fi(cube);
+			StoreState.cube = turn_Fi(StoreState.cube);
 		}
 		else if(c == 8){
-			cube = turn_F2(cube);
+			StoreState.cube = turn_F2(StoreState.cube);
 		}
-		
 		
 		if(d == 0){
-			cube = turn_U(cube);
+			StoreState.cube = turn_U(StoreState.cube);
 		}
 		else if(d == 1){
-			cube = turn_Ui(cube);
+			StoreState.cube = turn_Ui(StoreState.cube);
 		}
 		else if(d == 2){
-			cube = turn_U2(cube);
+			StoreState.cube = turn_U2(StoreState.cube);
 		}
 		else if(d == 3){
-			cube = turn_L(cube);
+			StoreState.cube = turn_L(StoreState.cube);
 		}
 		else if(d == 4){
-			cube = turn_Li(cube);
+			StoreState.cube = turn_Li(StoreState.cube);
 		}
 		else if(d == 5){
-			cube = turn_L2(cube);
+			StoreState.cube = turn_L2(StoreState.cube);
 		}
 		else if(d == 6){
-			cube = turn_F(cube);
+			StoreState.cube = turn_F(StoreState.cube);
 		}
 		else if(d == 7){
-			cube = turn_Fi(cube);
+			StoreState.cube = turn_Fi(StoreState.cube);
 		}
 		else if(d == 8){
-			cube = turn_F2(cube);
+			StoreState.cube = turn_F2(StoreState.cube);
 		}
-		
 		
 		if(e == 0){
-			cube = turn_U(cube);
+			StoreState.cube = turn_U(StoreState.cube);
 		}
 		else if(e == 1){
-			cube = turn_Ui(cube);
+			StoreState.cube = turn_Ui(StoreState.cube);
 		}
 		else if(e == 2){
-			cube = turn_U2(cube);
+			StoreState.cube = turn_U2(StoreState.cube);
 		}
 		else if(e == 3){
-			cube = turn_L(cube);
+			StoreState.cube = turn_L(StoreState.cube);
 		}
 		else if(e == 4){
-			cube = turn_Li(cube);
+			StoreState.cube = turn_Li(StoreState.cube);
 		}
 		else if(e == 5){
-			cube = turn_L2(cube);
+			StoreState.cube = turn_L2(StoreState.cube);
 		}
 		else if(e == 6){
-			cube = turn_F(cube);
+			StoreState.cube = turn_F(StoreState.cube);
 		}
 		else if(e == 7){
-			cube = turn_Fi(cube);
+			StoreState.cube = turn_Fi(StoreState.cube);
 		}
 		else if(e == 8){
-			cube = turn_F2(cube);
+			StoreState.cube = turn_F2(StoreState.cube);
 		}
 		
 		if(f == 0){
-			cube = turn_U(cube);
+			StoreState.cube = turn_U(StoreState.cube);
 		}
 		else if(f == 1){
-			cube = turn_Ui(cube);
+			StoreState.cube = turn_Ui(StoreState.cube);
 		}
 		else if(f == 2){
-			cube = turn_U2(cube);
+			StoreState.cube = turn_U2(StoreState.cube);
 		}
 		else if(f == 3){
-			cube = turn_L(cube);
+			StoreState.cube = turn_L(StoreState.cube);
 		}
 		else if(f == 4){
-			cube = turn_Li(cube);
+			StoreState.cube = turn_Li(StoreState.cube);
 		}
 		else if(f == 5){
-			cube = turn_L2(cube);
+			StoreState.cube = turn_L2(StoreState.cube);
 		}
 		else if(f == 6){
-			cube = turn_F(cube);
+			StoreState.cube = turn_F(StoreState.cube);
 		}
 		else if(f == 7){
-			cube = turn_Fi(cube);
+			StoreState.cube = turn_Fi(StoreState.cube);
 		}
 		else if(f == 8){
-			cube = turn_F2(cube);
+			StoreState.cube = turn_F2(StoreState.cube);
 		}
-		
 		
 		if(g == 0){
-			cube = turn_U(cube);
+			StoreState.cube = turn_U(StoreState.cube);
 		}
 		else if(g == 1){
-			cube = turn_Ui(cube);
+			StoreState.cube = turn_Ui(StoreState.cube);
 		}
 		else if(g == 2){
-			cube = turn_U2(cube);
+			StoreState.cube = turn_U2(StoreState.cube);
 		}
 		else if(g == 3){
-			cube = turn_L(cube);
+			StoreState.cube = turn_L(StoreState.cube);
 		}
 		else if(g == 4){
-			cube = turn_Li(cube);
+			StoreState.cube = turn_Li(StoreState.cube);
 		}
 		else if(g == 5){
-			cube = turn_L2(cube);
+			StoreState.cube = turn_L2(StoreState.cube);
 		}
 		else if(g == 6){
-			cube = turn_F(cube);
+			StoreState.cube = turn_F(StoreState.cube);
 		}
 		else if(g == 7){
-			cube = turn_Fi(cube);
+			StoreState.cube = turn_Fi(StoreState.cube);
 		}
 		else if(g == 8){
-			cube = turn_F2(cube);
+			StoreState.cube = turn_F2(StoreState.cube);
 		}
-		
 		
 		if(h == 0){
-			cube = turn_U(cube);
+			StoreState.cube = turn_U(StoreState.cube);
 		}
 		else if(h == 1){
-			cube = turn_Ui(cube);
+			StoreState.cube = turn_Ui(StoreState.cube);
 		}
 		else if(h == 2){
-			cube = turn_U2(cube);
+			StoreState.cube = turn_U2(StoreState.cube);
 		}
 		else if(h == 3){
-			cube = turn_L(cube);
+			StoreState.cube = turn_L(StoreState.cube);
 		}
 		else if(h == 4){
-			cube = turn_Li(cube);
+			StoreState.cube = turn_Li(StoreState.cube);
 		}
 		else if(h == 5){
-			cube = turn_L2(cube);
+			StoreState.cube = turn_L2(StoreState.cube);
 		}
 		else if(h == 6){
-			cube = turn_F(cube);
+			StoreState.cube = turn_F(StoreState.cube);
 		}
 		else if(h == 7){
-			cube = turn_Fi(cube);
+			StoreState.cube = turn_Fi(StoreState.cube);
 		}
 		else if(h == 8){
-			cube = turn_F2(cube);
+			StoreState.cube = turn_F2(StoreState.cube);
 		}
-				
+		
 		if(i == 0){
-			cube = turn_U(cube);
+			StoreState.cube = turn_U(StoreState.cube);
 		}
 		else if(i == 1){
-			cube = turn_Ui(cube);
+			StoreState.cube = turn_Ui(StoreState.cube);
 		}
 		else if(i == 2){
-			cube = turn_U2(cube);
+			StoreState.cube = turn_U2(StoreState.cube);
 		}
 		else if(i == 3){
-			cube = turn_L(cube);
+			StoreState.cube = turn_L(StoreState.cube);
 		}
 		else if(i == 4){
-			cube = turn_Li(cube);
+			StoreState.cube = turn_Li(StoreState.cube);
 		}
 		else if(i == 5){
-			cube = turn_L2(cube);
+			StoreState.cube = turn_L2(StoreState.cube);
 		}
 		else if(i == 6){
-			cube = turn_F(cube);
+			StoreState.cube = turn_F(StoreState.cube);
 		}
 		else if(i == 7){
-			cube = turn_Fi(cube);
+			StoreState.cube = turn_Fi(StoreState.cube);
 		}
 		else if(i == 8){
-			cube = turn_F2(cube);
+			StoreState.cube = turn_F2(StoreState.cube);
 		}
-		
 		
 		if(j == 0){
-			cube = turn_U(cube);
+			StoreState.cube = turn_U(StoreState.cube);
 		}
 		else if(j == 1){
-			cube = turn_Ui(cube);
+			StoreState.cube = turn_Ui(StoreState.cube);
 		}
 		else if(j == 2){
-			cube = turn_U2(cube);
+			StoreState.cube = turn_U2(StoreState.cube);
 		}
 		else if(j == 3){
-			cube = turn_L(cube);
+			StoreState.cube = turn_L(StoreState.cube);
 		}
 		else if(j == 4){
-			cube = turn_Li(cube);
+			StoreState.cube = turn_Li(StoreState.cube);
 		}
 		else if(j == 5){
-			cube = turn_L2(cube);
+			StoreState.cube = turn_L2(StoreState.cube);
 		}
 		else if(j == 6){
-			cube = turn_F(cube);
+			StoreState.cube = turn_F(StoreState.cube);
 		}
 		else if(j == 7){
-			cube = turn_Fi(cube);
+			StoreState.cube = turn_Fi(StoreState.cube);
 		}
 		else if(j == 8){
-			cube = turn_F2(cube);
+			StoreState.cube = turn_F2(StoreState.cube);
 		}
-		
 		
 		if(k == 0){
-			cube = turn_U(cube);
+			StoreState.cube = turn_U(StoreState.cube);
 		}
 		else if(k == 1){
-			cube = turn_Ui(cube);
+			StoreState.cube = turn_Ui(StoreState.cube);
 		}
 		else if(k == 2){
-			cube = turn_U2(cube);
+			StoreState.cube = turn_U2(StoreState.cube);
 		}
 		else if(k == 3){
-			cube = turn_L(cube);
+			StoreState.cube = turn_L(StoreState.cube);
 		}
 		else if(k == 4){
-			cube = turn_Li(cube);
+			StoreState.cube = turn_Li(StoreState.cube);
 		}
 		else if(k == 5){
-			cube = turn_L2(cube);
+			StoreState.cube = turn_L2(StoreState.cube);
 		}
 		else if(k == 6){
-			cube = turn_F(cube);
+			StoreState.cube = turn_F(StoreState.cube);
 		}
 		else if(k == 7){
-			cube = turn_Fi(cube);
+			StoreState.cube = turn_Fi(StoreState.cube);
 		}
 		else if(k == 8){
-			cube = turn_F2(cube);
+			StoreState.cube = turn_F2(StoreState.cube);
 		}
 		
 		//check to see if cube is solved
 	     
 		
-			if(cube[0][0] != cube[0][1] || cube[0][0] != cube[0][2] || cube[0][0] != cube[0][3]){
-				result1 = false;
+			if(StoreState.cube[0][0] != StoreState.cube[0][1] || StoreState.cube[0][0]
+					!= StoreState.cube[0][2] || StoreState.cube[0][0] != StoreState.cube[0][3]){
+				solved = false;
 			}
-			else if(cube[1][0] != cube[1][1] || cube[1][0] != cube[1][2] || cube[1][0] != cube[1][3]){
-				result1 = false;
+			else if(StoreState.cube[1][0] != StoreState.cube[1][1] || StoreState.cube[1][0] != StoreState.cube[1][2] || StoreState.cube[1][0] != StoreState.cube[1][3]){
+				solved = false;
 			}
-			else if(cube[2][0] != cube[2][1] || cube[2][0] != cube[2][2] || cube[2][0] != cube[2][3]){
-				result1 = false;
+			else if(StoreState.cube[2][0] != StoreState.cube[2][1] || StoreState.cube[2][0] != StoreState.cube[2][2] || StoreState.cube[2][0] != StoreState.cube[2][3]){
+				solved = false;
 			}
-			else if(cube[3][0] != cube[3][1] || cube[3][0] != cube[3][2] || cube[3][0] != cube[3][3]){
-				result1 = false;
+			else if(StoreState.cube[3][0] != StoreState.cube[3][1] || StoreState.cube[3][0] != StoreState.cube[3][2] || StoreState.cube[3][0] != StoreState.cube[3][3]){
+				solved = false;
 			}
-			else if(cube[4][0] != cube[4][1] || cube[4][0] != cube[4][2] || cube[4][0] != cube[4][3]){
-				result1 = false;
+			else if(StoreState.cube[4][0] != StoreState.cube[4][1] || StoreState.cube[4][0] != StoreState.cube[4][2] || StoreState.cube[4][0] != StoreState.cube[4][3]){
+				solved = false;
 			}
-			else if(cube[5][0] != cube[5][1] || cube[5][0] != cube[5][2] || cube[5][0] != cube[5][3]){
-				result1 = false;
+			else if(StoreState.cube[5][0] != StoreState.cube[5][1] || StoreState.cube[5][0] != StoreState.cube[5][2] || StoreState.cube[5][0] != StoreState.cube[5][3]){
+				solved = false;
 			}
-		return result1;
+		return solved;
 	}
 	public static void resetColors(){
 		for(int x = 0; x < 4; x++){
-			cube[0][x] = cube1[0][x];
+			StoreState.cube[0][x] = cube1[0][x];
 		}
 		for(int x = 0; x < 4; x++){
-			cube[1][x] = cube1[1][x];
+			StoreState.cube[1][x] = cube1[1][x];
 		}
 		for(int x = 0; x < 4; x++){
-			cube[2][x] = cube1[2][x];
+			StoreState.cube[2][x] = cube1[2][x];
 		}
 		
 		for(int x = 0; x < 4; x++){
-			cube[3][x] = cube1[3][x];
+			StoreState.cube[3][x] = cube1[3][x];
 		}
 		for(int x = 0; x < 4; x++){
-			cube[4][x] = cube1[4][x];
+			StoreState.cube[4][x] = cube1[4][x];
 		}
 		for(int x = 0; x < 4; x++){
-			cube[5][x] = cube1[5][x];
+			StoreState.cube[5][x] = cube1[5][x];
 		}
 	}
 		
@@ -698,21 +685,19 @@ public class PocketCubeSolver {
 		print_sides(cube, 5, 1);
 	} 
 	
-	public static void call_turn(int [][] cube, int not_sure){
-		
-	}
 	
 	public static boolean continue_sequence(int x, int y){
 
-        if(x >= 0 && y == -1){
+        if(x >= 0 && y == -1 || y == 0){
             return false;
         }
         else if(x >= 0 && side_number(x) == side_number(y)){
         	return false;
         }
         	return true;
-    	}
-	}
+        	}
+		
+	
 	public static int side_number(int x){
 		
 		if(x == 0 || x == 1 || x == 2){
@@ -726,107 +711,100 @@ public class PocketCubeSolver {
 		}
 			
 		return x;
-	}
+	}	
 	
-	public static void store_combination(int cube[][]){
-		
-		
-		
-	}
+	public static void main(String args []) {
 	
-	public static void main(String[] args){
-	
-		Scanner input = new Scanner(System.in);
-		 
-		ans = true;
 		long counter = 0;
-		char valid_cube;
+		char fail_entry = 'n';
+		while(fail_entry == 'n') {
+		Scanner input = new Scanner(System.in);
 		
 		System.out.println();
-		cube = scan_cube();
+		StoreState.cube = scan_cube();
 		System.out.println("confirm that this is your scramble y/n ");
-		print_cube(cube);
+		print_cube(StoreState.cube);
 		
-		valid_cube = input.next().charAt(0);
-		
-		ans = (valid_cube == 'y');
-		if (valid_cube == 'n'){
-			System.out.println("Please retry entering your cube");
-			System.exit(0);
+		System.out.print("");
+		fail_entry = input.nextLine().charAt(0);
+		if(fail_entry == 'n'){
+			for(int clear = 0; clear < 5000; clear++){
+			     System.out.println() ;
+			  	}
+			}
 		}
 		//setting cube1 to main cubes' colors for testing solution
 		for(int x = 0; x < 4; x++){
-			cube1[0][x] = cube[0][x];
+			cube1[0][x] = StoreState.cube[0][x];
 		}
 		for(int x = 0; x < 4; x++){
-			cube1[1][x] = cube[1][x];
+			cube1[1][x] = StoreState.cube[1][x];
 		}
 		for(int x = 0; x < 4; x++){
-			cube1[2][x] = cube[2][x];
+			cube1[2][x] = StoreState.cube[2][x];
 		}
 		for(int x = 0; x < 4; x++){
-			cube1[3][x] = cube[3][x];
+			cube1[3][x] = StoreState.cube[3][x];
 		}
 		for(int x = 0; x < 4; x++){
-			cube1[4][x] = cube[4][x];
+			cube1[4][x] = StoreState.cube[4][x];
 		}
 		for(int x = 0; x < 4; x++){
-			cube1[5][x] = cube[5][x];
+			cube1[5][x] = StoreState.cube[5][x];
 		}
 		
 		//save cube position for user in case orientation is forgotten.
 		for(int x = 0; x < 4; x++){
-			saved_cube[0][x] = cube[0][x];
+			saved_cube[0][x] = StoreState.cube[0][x];
 		}
 		for(int x = 0; x < 4; x++){
-			saved_cube[1][x] = cube[1][x];
+			saved_cube[1][x] = StoreState.cube[1][x];
 		}
 		for(int x = 0; x < 4; x++){
-			saved_cube[2][x] = cube[2][x];
+			saved_cube[2][x] = StoreState.cube[2][x];
 		}
 		for(int x = 0; x < 4; x++){
-			saved_cube[3][x] = cube[3][x];
+			saved_cube[3][x] = StoreState.cube[3][x];
 		}
 		for(int x = 0; x < 4; x++){
-			saved_cube[4][x] = cube[4][x];
+			saved_cube[4][x] = StoreState.cube[4][x];
 		}
 		for(int x = 0; x < 4; x++){
-			saved_cube[5][x] = cube[5][x];
+			saved_cube[5][x] = StoreState.cube[5][x];
 		}
 		
 		//9 ways the cube can be turned 
-		for(int a = -1; a < 10; a++){
-			for(int b = -1; b < 10; b++){
+		for(int a = -1; a < 9; a++){
+			for(int b = -1; b < 9; b++){
 				if(continue_sequence(a,b))
-				for(int c = -1; c < 10;c++ ){
+				for(int c = -1; c < 9;c++){
 					if(continue_sequence(b,c))
-					for(int d = -1; d < 10; d++){
+					for(int d = -1; d < 9; d++){
 						if(continue_sequence(c,d))
-						for(int e = -1; e < 10; e++){
+						for(int e = -1; e < 9; e++){
 							if(continue_sequence(d,e))
-							for(int f = -1; f < 10; f++){
+							for(int f = -1; f < 9; f++){
 								if(continue_sequence(e,f))
-								for(int g = -1; g < 10; g++){
+								for(int g = -1; g < 9; g++){
 									if(continue_sequence(f,g))
-									for(int h = -1; h < 10; h++){
+									for(int h = -1; h < 9; h++){
 										if(continue_sequence(g,h))
-										for(int i = -1; i < 10; i++){
+										for(int i = -1; i < 9; i++){
 											if(continue_sequence(h,i))
-											for(int j = -1; j < 10; j++){
+											for(int j = -1; j < 9; j++){
 												if(continue_sequence(i,j))
-												for(int k = -1;k < 10; k++){
+												for(int k = -1;k < 9; k++){
 													if(continue_sequence(j,k)){
 										System.out.println("Testing combination:"+ counter);
 										solved = test(a,b,c,d,e,f,g,h,i,j,k);
-										
 										if(solved){
 											
 											System.out.println();
 											System.out.println("Your cube has been solved, the solution is above this line");
-											System.out.println("In case you forgot the position of your cube here it is ;) ");
+											System.out.println("The orientation of your cube is below.");
 											
-											cube = saved_cube;
-											print_cube(cube);
+											StoreState.cube = saved_cube;
+											print_cube(StoreState.cube);
 														}
 													
 											resetColors();
