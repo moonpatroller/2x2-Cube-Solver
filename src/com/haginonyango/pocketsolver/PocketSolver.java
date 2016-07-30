@@ -1,5 +1,13 @@
+package com.haginonyango.pocketsolver;
 
+
+
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Scanner;
+
 
 /*
   The goal for this program is to go through all the possible combinations of the 2x2x2 rubiks cube 
@@ -13,7 +21,7 @@ import java.util.Scanner;
   
   
  */
-public class PocketCubeSolver {
+public class PocketSolver {
 	
 	public static int cube1[][] = new int [6][4];
 	public static int saved_cube[][] = new int [6][4];
@@ -252,9 +260,12 @@ public class PocketCubeSolver {
 		//Initiate the counter 
 		int counter0 = 0;
 		counter1 = 0;
+		int x = 1; 
 		
 		Scanner in = new Scanner(System.in);
 		//Collect the data
+		do{
+			try{
 			System.out.println("Welcome to the 2x2x2 cube solver :)\n \n"
 					+ "Please enter your cube");
 			
@@ -267,7 +278,16 @@ public class PocketCubeSolver {
 				
 				input[0][counter0] = Integer.parseInt(in.nextLine());
 				counter0++;	
+				
 			}
+			x++;
+		}catch(Exception e){
+			
+		}
+		}while(x == 4);
+		
+		
+		
 			System.out.println(" 0 = white \n 1 = orange \n 2 = green \n 3 = red\n 4 = blue\n 5 = yellow\n");
 			System.out.println("Enter the colors for the LEFT side");
 			
@@ -322,8 +342,7 @@ public class PocketCubeSolver {
 	
 	public static boolean test(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k){
 		boolean solved = true;
-		
-		
+			
 		if(a == 0){
 			StoreState.cube = turn_U(StoreState.cube);
 		}
@@ -634,10 +653,8 @@ public class PocketCubeSolver {
 		}
 		
 		//check to see if cube is solved
-	     
 		
-			if(StoreState.cube[0][0] != StoreState.cube[0][1] || StoreState.cube[0][0]
-					!= StoreState.cube[0][2] || StoreState.cube[0][0] != StoreState.cube[0][3]){
+			if(StoreState.cube[0][0] != StoreState.cube[0][1] || StoreState.cube[0][0]	!= StoreState.cube[0][2] || StoreState.cube[0][0] != StoreState.cube[0][3]){
 				solved = false;
 			}
 			else if(StoreState.cube[1][0] != StoreState.cube[1][1] || StoreState.cube[1][0] != StoreState.cube[1][2] || StoreState.cube[1][0] != StoreState.cube[1][3]){
@@ -684,7 +701,6 @@ public class PocketCubeSolver {
 		print_sides(cube, 1, 4);
 		print_sides(cube, 5, 1);
 	} 
-	
 	
 	public static boolean continue_sequence(int x, int y){
 
@@ -772,6 +788,67 @@ public class PocketCubeSolver {
 		for(int x = 0; x < 4; x++){
 			saved_cube[5][x] = StoreState.cube[5][x];
 		}
+		//this is in Main 
+		
+		/*
+			List<AllTurns> search_all(StoreState state, int curr_depth, int maxDepth){
+				 //current depth is the counter
+				 //int maxDepth is the number of combinations it should stop at
+		    if( curr_depth >= maxDepth){ 
+		    	return null;
+		    }
+		    if(solved(state)){ 
+		    	return new ArrayList(depth);
+		    }
+		    for(AllTurns turn: turns){
+		        StoreState turned = turn.apply(state);
+		        List<AllTurns> sequence = search_all(turn, curr_depth+1, maxDepth)
+		        if( sequence!= null){
+		             sequence.add(rotation);
+		             return sequence;
+		        }
+		        return null;
+		    }
+		 */
+		
+/*		String[] things ={"eggs", "lasers","hats","pie"};
+		List<String> list1 = new ArrayList<String>();
+		*/
+		
+		
+		/*
+						 List<Rotation> backtrack(StoreState state, <other paramters>, int depth, int maxDepth){
+				    if( depth >= maxDepth){ return null;}
+				    if(isSolved(state)){ return new ArrayList(depth);}
+				    for(Rotation rotation: rotations){
+				        StoreState rotated = rotation.apply(state);
+				        List<Rotation> sequence = backtrack(rotate, <other>, depth+1, maxDepth)
+				        if( sequence!= null){
+				             sequence.add(rotation);
+				             return sequence;
+				        }
+				        return null;
+				    }
+		 */
+		
+		
+		
+		
+		/*List<Integer> iterate = new List<Integer>(StoreState state, int depth; int maxDepth){
+			
+			int depth = 0;
+			
+			if(depth >= maxDepth){
+				return null;
+			}
+			
+		}
+		*/
+		
+		HashSet<PocketSolver> combinations = new HashSet<PocketSolver>();	
+		
+		combinations.contains(StoreState.cube);
+		System.out.println(combinations);
 		
 		//9 ways the cube can be turned 
 		for(int a = -1; a < 9; a++){
@@ -805,6 +882,8 @@ public class PocketCubeSolver {
 											
 											StoreState.cube = saved_cube;
 											print_cube(StoreState.cube);
+											
+											
 														}
 													
 											resetColors();
