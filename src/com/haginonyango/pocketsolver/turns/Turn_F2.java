@@ -2,10 +2,11 @@ package com.haginonyango.pocketsolver.turns;
 
 import com.haginonyango.pocketsolver.Rotation;
 import com.haginonyango.pocketsolver.StoreState;
+import com.haginonyango.pocketsolver.UnaryOperator;
 
-public class Turn_F2 implements Rotation{
+public class Turn_F2 implements UnaryOperator<Rotation>{
 
-	@Override
+	
 	public StoreState apply(StoreState state) {
 		RotationUtils.turn_180(state, 2);
 		int cube0_2 = StoreState.cube[0][2];

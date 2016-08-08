@@ -2,9 +2,9 @@ package com.haginonyango.pocketsolver.turns;
 import com.haginonyango.pocketsolver.*;
 
 
-public class Turn_Li implements Rotation{
+public class Turn_Li implements UnaryOperator<Rotation>{
 
-	@Override
+
 	public StoreState apply(StoreState state) {
 		
 		RotationUtils.turn_CC(state, 1);
