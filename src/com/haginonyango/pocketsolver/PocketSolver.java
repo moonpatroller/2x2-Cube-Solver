@@ -8,6 +8,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
 
+import com.haginonyango.pocketsolver.turns.Turn_F;
+
 
 /*
   The goal for this program is to go through all the possible combinations of the 2x2x2 rubiks cube 
@@ -40,74 +42,13 @@ public class PocketSolver {
 					}
 				for(int column = 0; column < 2; column++) {
 					int sticker = (2 * line) + column;
-					System.out.print(cube[side][sticker]);
+					System.out.print(ColorNames[cube[side][sticker]]);
 				}
 			}
 		System.out.println();
 		}
 	}
 		
-
-	
-	public static int[][] turn_F(int cube[][]){
-		 
-		 int cube0_2 = cube[0][2];
-		 int cube0_3 = cube[0][3];
-		 cube[0][2] = cube[1][3];
-		 cube[0][3] = cube[1][1];
-		 
-		 cube[1][1] = cube[5][0];
-		 cube[1][3] = cube[5][1];
-		 
-		 cube[5][0] = cube[3][2];
-		 cube[5][1] = cube[3][0];
-		 
-		 cube[3][2] = cube0_3;
-		 cube[3][0] = cube0_2;	 
-		System.out.print("F ");
-		return cube;
-	}
-	public static int[][] turn_Fi(int cube[][]){
-		 
-		 int cube0_2 = cube[0][2];
-		 int cube0_3 = cube[0][3];
-		 
-		 cube[0][2] = cube[3][0];
-		 cube[0][3] = cube[3][2];
-		 
-		 cube[3][0] = cube[5][1];
-		 cube[3][2] = cube[5][0];
-		 
-		 cube[5][1] = cube[1][3];
-		 cube[5][0] = cube[1][1];
-		 
-		 cube[1][3] = cube0_2;
-		 cube[1][1] = cube0_3;
-		 System.out.print("Fi ");
-		 return cube;
-	}
-	public static int[][] turn_F2(int cube[][]){
-	
-		int cube0_2 = cube[0][2];
-		int cube0_3 = cube[0][3];
-		int cube1_1 = cube[1][1];
-		int cube1_3 = cube[1][3];
-		
-		cube[0][2] = cube[5][1];
-		cube[0][3] = cube[5][0];
-		
-		cube[1][1] = cube[3][2];
-		cube[1][3] = cube[3][0];
-		
-		cube[3][2] = cube1_1;
-		cube[3][0] = cube1_3;
-		
-		cube[5][1] = cube0_2;
-		cube[5][0] = cube0_3;
-		System.out.print("F2 ");
-		return cube;
-	}
-	
 	
 	static void print_cube(int[][] cube) {
 		print_sides(cube, 0, 1);
@@ -298,31 +239,35 @@ public class PocketSolver {
 /*		String[] things ={"eggs", "lasers","hats","pie"};
 		List<String> list1 = new ArrayList<String>();
 		*/
+	System.out.println();
 	
-		HashSet<PocketSolver> combinations = new HashSet<PocketSolver>();
-		System.out.println(combinations);
 	
+	    }
+	
+	List<Rotation> backtrack(StoreState state, int depth, int maxDepth){
 		
-		 List<Rotation> backtrack(StoreState state, int depth, int maxDepth){
-			    if(depth >= maxDepth){ return null;}
-			    if(isSolved(state)){ return new ArrayList(depth);}
-			    for(Rotation rotation: rotations){
-			        StoreState rotated = rotation.apply(state);
-			        List<Rotation> sequence = backtrack(rotate, depth+1, maxDepth){
-			        if(sequence!= null){
-			        	if(isSolved = false){
-			        		StoreState.add(StoreState.cube);
-			             sequence.add(rotation);
-			             return sequence;
-			        	} 
-			        	}
-			        }
-			        return null;
-		  }
-	 }
+		Rotation[] things ={Turn_F};
+		 
+		 
+	    if(depth >= maxDepth){ return null;}
+	    if(isSolved(state)){ return new ArrayList(depth);}
+	    for(Rotation rotation: things){
+	        StoreState rotated = rotation.apply(state);
+	        List<Rotation> sequence = backtrack(state, depth+1, maxDepth);
+	        if(sequence!= null){
+	        	if(isSolved(state) == false){
+	        		sequence.add(rotation);
+	             return sequence;
+	        	  } 
+	        	}
+	        }
+	        return null;
 	}
+		
 
-
+	
+		 
+		
 		private boolean isSolved(StoreState state) {
 
 				boolean solved = true;

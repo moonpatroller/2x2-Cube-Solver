@@ -3,7 +3,6 @@ import com.haginonyango.pocketsolver.*;
 
 public class RotationUtils {
 	
-	
 		public static StoreState turn_CW(StoreState state, int side_num){
 			
 	        int cube0_0 = StoreState.cube[side_num][0];
