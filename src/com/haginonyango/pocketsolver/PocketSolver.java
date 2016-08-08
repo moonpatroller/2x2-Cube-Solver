@@ -2,11 +2,13 @@ package com.haginonyango.pocketsolver;
 
 
 
-
+import com.haginonyango.pocketsolver.turns.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
+
+import javax.sound.midi.Sequence;
 
 import com.haginonyango.pocketsolver.turns.Turn_F;
 
@@ -232,27 +234,58 @@ public class PocketSolver {
 		for(int x = 0; x < 4; x++){
 			saved_cube[5][x] = StoreState.cube[5][x];
 		}
-		//this is in Main 
+		
+		
+
+		test_turns(null, 0, 3674160);
 		
 		
 		
 /*		String[] things ={"eggs", "lasers","hats","pie"};
 		List<String> list1 = new ArrayList<String>();
 		*/
-	System.out.println();
-	
-	
 	    }
 	
-	List<Rotation> backtrack(StoreState state, int depth, int maxDepth){
+	public static Rotation test_turns(StoreState state, int currDepth, int maxDepth){
+		
+		UnaryOperator<Rotation> allTurns[] = new UnaryOperator[9];
+		allTurns[0] = new Turn_U();
+		allTurns[1] = new Turn_Ui();
+		allTurns[2] = new Turn_U2();
+		allTurns[3] = new Turn_L();
+		allTurns[4] = new Turn_Li();
+		allTurns[5] = new Turn_L2();
+		allTurns[6] = new Turn_F();
+		allTurns[7] = new Turn_Fi();
+		allTurns[8] = new Turn_F2();
+		
+		maxDepth = 3674160; 
+		currDepth = 0;
+		if(currDepth >= maxDepth){System.exit(0);}
+		if(isSolved(state)){ return PrintSolution();}
+		for(UnaryOperator<Rotation> turns: allTurns){
+			StoreState rotated = turns;
+			Rotation sequence = test_turns(state, currDepth+1, maxDepth);
+			if(sequence != null){
+				if(isSolved(state) == false){
+					sequence.add(turns);
+					return sequence;
+				}
+			}
+		}
+		return state;
+		
+		
+	}
+	
+	/*List<Rotation> backtrack(StoreState state, int depth, int maxDepth){
 		
 		Rotation[] things ={Turn_F};
 		 
-		 
 	    if(depth >= maxDepth){ return null;}
 	    if(isSolved(state)){ return new ArrayList(depth);}
-	    for(Rotation rotation: things){
-	        StoreState rotated = rotation.apply(state);
+	    for(Rotation thing: things){
+	        StoreState rotated = thing.apply(state);
 	        List<Rotation> sequence = backtrack(state, depth+1, maxDepth);
 	        if(sequence!= null){
 	        	if(isSolved(state) == false){
@@ -263,12 +296,19 @@ public class PocketSolver {
 	        }
 	        return null;
 	}
-		
+		*/
 
 	
 		 
 		
-		private boolean isSolved(StoreState state) {
+		private static Rotation PrintSolution() {
+		
+			System.out.println("your cube has been solved.");
+		return null;
+	}
+
+
+		private static boolean isSolved(StoreState state) {
 
 				boolean solved = true;
 			

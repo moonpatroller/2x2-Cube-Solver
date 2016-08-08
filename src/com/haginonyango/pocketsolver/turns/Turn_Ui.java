@@ -4,7 +4,7 @@ import com.haginonyango.pocketsolver.*;
 
 public class Turn_Ui implements Rotation{
 
-	@Override
+	
 	public StoreState apply(StoreState state) {
 	
 		RotationUtils.turn_CC(state, 0);

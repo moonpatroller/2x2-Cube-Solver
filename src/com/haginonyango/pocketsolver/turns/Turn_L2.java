@@ -1,7 +1,8 @@
 package com.haginonyango.pocketsolver.turns;
 import com.haginonyango.pocketsolver.*;
+import com.haginonyango.pocketsolver.Rotation;
 
-public class Turn_L2 implements UnaryOperator<Rotation>{
+public class Turn_L2 implements Rotation{
 
 	
 	public StoreState apply(StoreState state) {
