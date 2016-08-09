@@ -237,7 +237,7 @@ public class PocketSolver {
 		
 		
 
-		test_turns(null, 0, 3674160);
+	//	test_turns(,0,400000);
 		
 		
 		
@@ -248,7 +248,12 @@ public class PocketSolver {
 	
 	public static Rotation test_turns(StoreState state, int currDepth, int maxDepth){
 		
-		UnaryOperator<Rotation> allTurns[] = new UnaryOperator[9];
+		
+
+		HashSet<StoreState> combinations = new HashSet<StoreState>();
+		
+
+		Rotation allTurns[] = new Rotation[9];
 		allTurns[0] = new Turn_U();
 		allTurns[1] = new Turn_Ui();
 		allTurns[2] = new Turn_U2();
@@ -259,23 +264,26 @@ public class PocketSolver {
 		allTurns[7] = new Turn_Fi();
 		allTurns[8] = new Turn_F2();
 		
-		maxDepth = 3674160; 
-		currDepth = 0;
-		if(currDepth >= maxDepth){System.exit(0);}
+		if(isSolved(state) == true){
+			System.out.println("Your cube is solved already :) ");
+		}else{
+		if(currDepth >= maxDepth){return null;}
 		if(isSolved(state)){ return PrintSolution();}
-		for(UnaryOperator<Rotation> turns: allTurns){
-			StoreState rotated = turns;
-			Rotation sequence = test_turns(state, currDepth+1, maxDepth);
+		for(Rotation turns: allTurns){
+			StoreState rotated = turns.apply(state);
+			 Rotation sequence = test_turns(state, currDepth+1, maxDepth);
 			if(sequence != null){
 				if(isSolved(state) == false){
 					sequence.add(turns);
+					combinations.add(allTurns);
 					return sequence;
 				}
 			}
 		}
-		return state;
+		}
+		return null;	
 		
-		
+
 	}
 	
 	/*List<Rotation> backtrack(StoreState state, int depth, int maxDepth){
@@ -306,7 +314,6 @@ public class PocketSolver {
 			System.out.println("your cube has been solved.");
 		return null;
 	}
-
 
 		private static boolean isSolved(StoreState state) {
 

@@ -25,4 +25,11 @@ public class Turn_F2 implements Rotation{
 		return state;
 	}
 
+	@Override
+	public Rotation add(Rotation turns) {
+		
+		combinations.add()
+		return null;
+	}
+
 }
