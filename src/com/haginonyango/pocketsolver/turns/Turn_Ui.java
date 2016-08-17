@@ -21,7 +21,4 @@ public class Turn_Ui implements Rotation{
 		 System.out.print("Ui ");
 		return state;
 	}
-
-	
-
 }

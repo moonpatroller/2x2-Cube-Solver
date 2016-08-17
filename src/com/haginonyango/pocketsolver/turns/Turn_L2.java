@@ -1,10 +1,8 @@
 package com.haginonyango.pocketsolver.turns;
 import com.haginonyango.pocketsolver.*;
-import com.haginonyango.pocketsolver.Rotation;
 
 public class Turn_L2 implements Rotation{
 
-	
 	public StoreState apply(StoreState state) {
 		RotationUtils.turn_180(state, 1);
 		int cube0_0 = StoreState.cube[0][0];

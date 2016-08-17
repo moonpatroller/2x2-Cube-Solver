@@ -1,12 +1,9 @@
 package com.haginonyango.pocketsolver.turns;
-
-import com.haginonyango.pocketsolver.Rotation;
-import com.haginonyango.pocketsolver.StoreState;
+import com.haginonyango.pocketsolver.*;
 
 
 public class Turn_F2 implements Rotation{
 
-	
 	public StoreState apply(StoreState state) {
 		RotationUtils.turn_180(state, 2);
 		int cube0_2 = StoreState.cube[0][2];
@@ -24,12 +21,4 @@ public class Turn_F2 implements Rotation{
 		System.out.print("F2 ");
 		return state;
 	}
-
-	@Override
-	public Rotation add(Rotation turns) {
-		
-		combinations.add()
-		return null;
-	}
-
 }

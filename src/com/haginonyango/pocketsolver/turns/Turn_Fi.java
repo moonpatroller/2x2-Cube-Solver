@@ -3,10 +3,8 @@ package com.haginonyango.pocketsolver.turns;
 import com.haginonyango.pocketsolver.Rotation;
 import com.haginonyango.pocketsolver.StoreState;
 
+public class Turn_Fi implements Rotation {
 
-public class Turn_Fi implements Rotation{
-
-	
 	public StoreState apply(StoreState state) {
 		
 		 RotationUtils.turn_CC(state, 2);
@@ -23,5 +21,4 @@ public class Turn_Fi implements Rotation{
 		 System.out.print("Fi ");
 		return state;
 	}
-
 }
