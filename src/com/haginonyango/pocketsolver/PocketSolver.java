@@ -1,18 +1,8 @@
 package com.haginonyango.pocketsolver;
 
-
-
 import com.haginonyango.pocketsolver.turns.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
 
-
-import com.haginonyango.pocketsolver.turns.Turn_F;
 
 
 /*
@@ -60,12 +50,10 @@ public class PocketSolver {
 		int input[][] = new int[6][4];
 		//Initiate the counter 
 		int counter0 = 0;
-		int x = 1; 
 		
 		Scanner in = new Scanner(System.in);
 		//Collect the data
-		do{
-			try{
+		
 			System.out.println("Welcome to the 2x2x2 cube solver :)\n \n"
 					+ "Please enter your cube");
 			
@@ -78,11 +66,8 @@ public class PocketSolver {
 				counter0++;	
 				
 			}
-			x++;
-		}catch(Exception e){
-			
-		}
-		}while(x == 4);
+
+		
 		
 		
 		
@@ -133,16 +118,37 @@ public class PocketSolver {
 		return input;
 	}
 	   		
+
 	
-	/*List<Rotation> listOfTurns = Arrays.asList(allTurns);
-	Set<Rotation> combination = new HashSet<Rotation>(listOfTurns);*/
 	
-	HashSet<StoreState> combination = new HashSet<StoreState>();
 	
-	public  Rotation BFS_Search(){
-		PriorityQueue<Rotation> q = new PriorityQueue<Rotation>();
+	
+	public void setForSearch(){
 		
+		char fail_entry = 'n';
+		while(fail_entry == 'n') {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println();
+		StoreState.cube = scan_cube();
+		System.out.println("confirm that this is your scramble y/n ");
+		print_cube(StoreState.cube);
+		
+		System.out.print("");
+		fail_entry = input.nextLine().charAt(0);
+		if(fail_entry == 'n'){
+			for(int clear = 0; clear < 5000; clear++){
+			     System.out.println() ;
+			  	}
+			}
+		}
+		 
+	}
 	
+	public  HashSet<StoreState> combination = new HashSet<StoreState>();
+	
+	public Rotation BFS_Search(){
+		
 		Rotation allTurns[] = new Rotation[9];
 		allTurns[0] = new Turn_U();
 		allTurns[1] = new Turn_Ui();
@@ -154,6 +160,9 @@ public class PocketSolver {
 		allTurns[7] = new Turn_Fi();
 		allTurns[8] = new Turn_F2();
 			
+	PriorityQueue<Rotation> q = new PriorityQueue<Rotation>();
+		
+	 StoreState.cube = currState(StoreState.cube);
 		while(true)
 		{
 			if(isUnique()== true){
@@ -167,8 +176,51 @@ public class PocketSolver {
 		}
 	}
 	
+	public boolean isUnique(){
+		currState(StoreState.cube);
+		if(combination.contains(currState(StoreState.cube))){
+			return false;
+		}
+		if(!combination.contains(currState(StoreState.cube))){
+			return true;
+		}
+	return true;
+	}
+	
+	
+	public int[][] currState(int [][] cube){
+		 
+		  return cube;
+	}
+	
+	
+	
+	
+	
+	
+	/*List<Rotation> listOfTurns = Arrays.asList(allTurns);
+	Set<Rotation> combination = new HashSet<Rotation>(listOfTurns);*/
+	
+	//HashSet<PocketSolver> combination = new HashSet<PocketSolver>();
+	
+	/*public Rotation BFS_Search(){
+			
+		while(true)
+		{
+			if(isUnique()== true){
+				for(Rotation rotation :allTurns){
+					q.offer(rotation);
+				}
+			}
+			else if(isUnique()== false){
+				q.poll();
+			}
+		}
+	}
+	
+	private int[][] currState;
 	public  boolean isUnique(){
-		currState();
+		StoreState.cube = currState();
 		if(combination.contains(currState())){
 			return false;
 		}
@@ -178,31 +230,13 @@ public class PocketSolver {
 	return true;
 	}
 	
-	public  int[][] currState(){
-		  
-		  return null;
-	}
+	
+	private int[][] currState() {
+		return null;
+	}*/
 	
 	
-	
-/*	if(isSolved(state) == true){
-		System.out.println("Your cube is solved already :) ");
-	}else{
-	if(currDepth >= maxDepth){return null;}
-	if(isSolved(state)){return PrintSolution();}
-	for(Rotation turns: allTurns){
-		turns.apply(state);
-		 Rotation sequence = test_turns(state, currDepth+1, maxDepth);
-		if(sequence != null){
-			if(isSolved(state) == false){
-				sequence.add(turns);
-				return sequence;
-				}
-			}
-		}
-	}
-	return null;	*/
-	
+
 
 		private  boolean isSolved(Rotation testMoves) {
 

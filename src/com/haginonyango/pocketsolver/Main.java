@@ -7,9 +7,10 @@ public class Main {
 		PocketSolver cube2x2 = new PocketSolver();
 		
 		
-		cube2x2.isUnique();
+		cube2x2.setForSearch();
 		cube2x2.BFS_Search();
 		
+		
+		
 	}
-
 }
